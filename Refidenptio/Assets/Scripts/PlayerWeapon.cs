@@ -8,6 +8,8 @@ public class PlayerWeapon : MonoBehaviour
     public int qtdAmmo;
     public int maxAmmo;
 
+    public Animator animator;
+
     private void Update()
     {
         Shoot();
@@ -28,6 +30,8 @@ public class PlayerWeapon : MonoBehaviour
     {
         if(qtdAmmo > 0)
         {
+            animator.SetTrigger("Atk");
+
             qtdAmmo--;
             RaycastHit hit;
 
@@ -41,7 +45,7 @@ public class PlayerWeapon : MonoBehaviour
                 }
 
                 //Colocar isso no Start para economizar processamento
-                GameObject.FindGameObjectWithTag("GameControllerT").GetComponent<GameManagerT>().Killing(1);
+                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManagerT>().Killing(1);
 
                 Debug.Log("Tiro certo");
                 return true;
