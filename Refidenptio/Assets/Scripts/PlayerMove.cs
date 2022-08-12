@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public static PlayerMove Player;
     private Rigidbody rb;
     private Animator anim;
 
@@ -16,6 +17,7 @@ public class PlayerMove : MonoBehaviour
 
     void Start()
     {
+        Player = this;
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }

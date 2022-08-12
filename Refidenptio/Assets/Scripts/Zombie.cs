@@ -26,6 +26,6 @@ public class Zombie : MonoBehaviour
 
         Vector3 lookAt = new Vector3(finalPos.x, transform.position.y, finalPos.z);
 
-        transform.LookAt(lookAt);
+        //transform.LookAt(lookAt);
     }
 }
