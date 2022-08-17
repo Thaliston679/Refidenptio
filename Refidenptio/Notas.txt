@@ -9,3 +9,5 @@ Fazer o Player perder HP com inimigos melee e inimigos ranged
 Consertar pulo que para de funcionar, tirando o box collider de cada bloco na parede e substituindo por um só para cada parede
 
 Criar animações de ataque inimigos
+
+Diminuir tamanho da fonte do Alerta de Fotossensibilidade
