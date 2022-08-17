@@ -12,6 +12,13 @@ public class PlayerWeapon : MonoBehaviour
 
     public GameObject bulletEffectPrefab;
 
+    //private GameManagerT gameManagerT;
+
+    private void Start()
+    {
+        //gameManagerT = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManagerT>();
+    }
+
     private void Update()
     {
         Shoot();
@@ -110,10 +117,9 @@ public class PlayerWeapon : MonoBehaviour
                     // ------------------------------------------------------------------------------------------------
                     // ------------------------------------------------------------------------------------------------
 
-                }
+                    //gameManagerT.Killing(1);
 
-                //Colocar isso no Start para economizar processamento
-                GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManagerT>().Killing(1);
+                }
 
                 Debug.Log("Tiro certo");
                 Instantiate(bulletEffectPrefab, hit.point, Quaternion.identity);

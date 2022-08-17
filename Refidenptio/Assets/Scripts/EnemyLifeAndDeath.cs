@@ -5,18 +5,23 @@ using UnityEngine;
 public class EnemyLifeAndDeath : MonoBehaviour
 {
     public int enemyHP;
+    public int enemyScoreValue;
     private float selfTimeDamage = 0;
     private bool onDamage = false;
 
+    private GameManagerT gameManagerT;
+
     private void Start()
     {
-
+        gameManagerT = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManagerT>();
     }
 
     void Update()
     {
         if (enemyHP <= 0)
         {
+            gameManagerT.Killing(enemyScoreValue);
+
             Destroy(this.gameObject);
             //Aumentar em 1 o contador de inimigos mortos
         }
