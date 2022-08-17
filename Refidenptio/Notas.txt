@@ -2,7 +2,7 @@ Criar porta com animação que abre por quantidade de inimigos mortos
 
 Empty Object que armazena os inimigos de uma certa área e que são desbloqueados ao abrir a porta depois de finalizar todos de uma área
 
-Script para HP inimigo
+•Script para HP inimigo•
 
 Fazer o Player perder HP com inimigos melee e inimigos ranged
 

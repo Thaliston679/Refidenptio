@@ -15,6 +15,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Update()
     {
         Shoot();
+        ReloadAmmo();
     }
 
     void Shoot()
@@ -22,6 +23,14 @@ public class PlayerWeapon : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             Hit();
+        }
+    }
+
+    void ReloadAmmo()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            qtdAmmo = maxAmmo;
         }
     }
 
@@ -78,13 +87,29 @@ public class PlayerWeapon : MonoBehaviour
             qtdAmmo--;
             RaycastHit hit;
 
-            if (Physics.Raycast(aimC.position, aimC.TransformDirection(Vector3.forward), out hit, 10f /*Mathf.Infinity*/ ))
+            if (Physics.Raycast(aimC.position, aimC.TransformDirection(Vector3.forward), out hit, 20f /*Mathf.Infinity*/ ))
             {
                 Debug.DrawRay(aimC.position, aimC.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 
                 if (hit.collider.CompareTag("Enemy"))
                 {
-                    Destroy(hit.collider.gameObject);
+                    //Destroy(hit.collider.gameObject);
+
+                    // ------------------------------------------------------------------------------------------------
+                    // ------------------------------------------------------------------------------------------------
+                    EnemyLifeAndDeath EnemyHpControl = hit.collider.gameObject.GetComponent<EnemyLifeAndDeath>();
+                    EnemyHpControl.SetEnemyHp(EnemyHpControl.GetEnemyHp() - 1);
+                    if (EnemyHpControl.GetEnemyHp() >= 1)
+                    {
+                        SpriteRenderer img = hit.collider.gameObject.GetComponent<SpriteRenderer>();
+                        img.color = Color.red;
+                        // OU //img.color = Color.red/black;
+                        EnemyHpControl.SetSelfTimerDamage(0);
+                        EnemyHpControl.SetOnDamage(true);
+                    }
+                    // ------------------------------------------------------------------------------------------------
+                    // ------------------------------------------------------------------------------------------------
+
                 }
 
                 //Colocar isso no Start para economizar processamento
