@@ -7,6 +7,7 @@ public class PlayerWeapon : MonoBehaviour
     public Transform aimC;
     public int qtdAmmo;
     public int maxAmmo;
+    private bool canShoot = true;
 
     public Animator animator;
 
@@ -27,7 +28,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void Shoot()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && canShoot)
         {
             Hit();
         }
@@ -89,6 +90,8 @@ public class PlayerWeapon : MonoBehaviour
     {
         if (qtdAmmo > 0)
         {
+            StartCoroutine(Shooting());
+
             animator.SetTrigger("Atk");
 
             qtdAmmo--;
@@ -139,5 +142,14 @@ public class PlayerWeapon : MonoBehaviour
             return false;
         }
 
+    }
+
+    IEnumerator Shooting()
+    {
+        canShoot = false;
+
+        yield return new WaitForSeconds(0.35f);
+
+        canShoot = true;
     }
 }
