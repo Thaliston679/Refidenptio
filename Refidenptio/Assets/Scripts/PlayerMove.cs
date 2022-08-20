@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     public static PlayerMove Player;
     private Rigidbody rb;
     private Animator anim;
+    public GameObject damageT;
 
     public float speedX;
     public float speedZ;
@@ -28,6 +29,23 @@ public class PlayerMove : MonoBehaviour
         Movement();
         Run();
         Jump();
+        Damage();
+    }
+
+    void Damage()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            anim.SetTrigger("Damage");
+            StartCoroutine(DamageT());
+        }
+    }
+
+    IEnumerator DamageT()
+    {
+        damageT.SetActive(true);
+        yield return new WaitForSeconds(0.25f);
+        damageT.SetActive(false);
     }
 
     void Movement()
