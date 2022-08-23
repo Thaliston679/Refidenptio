@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour
 {
+    /*
     private GameObject player;
     public float speedZombie;
 
@@ -27,5 +29,19 @@ public class Zombie : MonoBehaviour
         Vector3 lookAt = new Vector3(finalPos.x, transform.position.y, finalPos.z);
 
         //transform.LookAt(lookAt);
+    }
+    */
+
+    private NavMeshAgent agent;
+    public GameObject target;
+
+    private void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    private void Update()
+    {
+        agent.SetDestination(target.transform.position);
     }
 }
