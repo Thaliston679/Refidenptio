@@ -21,8 +21,9 @@ public class EnemyLifeAndDeath : MonoBehaviour
         if (enemyHP <= 0)
         {
             gameManagerT.Killing(enemyScoreValue);
-
+            gameManagerT.defeatedEnemies++;
             Destroy(this.gameObject);
+            Debug.Log(gameManagerT.defeatedEnemies);
             //Aumentar em 1 o contador de inimigos mortos
         }
         TimerDamage();

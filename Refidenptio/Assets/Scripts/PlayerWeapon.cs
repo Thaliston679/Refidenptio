@@ -23,7 +23,8 @@ public class PlayerWeapon : MonoBehaviour
     private void Update()
     {
         Shoot();
-        ReloadAmmo();
+        //ReloadAmmo();
+        AmmoLimit();
     }
 
     void Shoot()
@@ -34,6 +35,7 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
+    /*
     void ReloadAmmo()
     {
         if (Input.GetButtonDown("Fire2"))
@@ -41,8 +43,20 @@ public class PlayerWeapon : MonoBehaviour
             qtdAmmo = maxAmmo;
         }
     }
+    */
 
+    public void GetAmmo(int a)
+    {
+        qtdAmmo += a;
+    }
 
+    void AmmoLimit()
+    {
+        if(qtdAmmo > maxAmmo)
+        {
+            qtdAmmo = maxAmmo;
+        }
+    }
 
 
     /*public bool Hit()

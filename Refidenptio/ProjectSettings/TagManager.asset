@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - Ammo
+  - HP
   layers:
   - Default
   - TransparentFX

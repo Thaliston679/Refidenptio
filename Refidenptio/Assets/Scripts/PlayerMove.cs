@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     public GameObject damageT;
+    public GameManagerT gameManagerT;
 
     public float speedX;
     public float speedZ;
@@ -38,6 +39,7 @@ public class PlayerMove : MonoBehaviour
         {
             anim.SetTrigger("Damage");
             StartCoroutine(DamageT());
+            gameManagerT.playerHP -= 10;
         }
     }
 

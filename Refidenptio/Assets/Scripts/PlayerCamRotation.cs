@@ -9,8 +9,8 @@ public class PlayerCamRotation : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        /*Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;*/
     }
 
     // Update is called once per frame
@@ -24,4 +24,6 @@ public class PlayerCamRotation : MonoBehaviour
         pH += speedH * Input.GetAxis("Mouse X");
         transform.eulerAngles = new Vector3(0, pH, 0);
     }
+
+    
 }
