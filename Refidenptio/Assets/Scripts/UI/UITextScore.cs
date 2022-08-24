@@ -6,7 +6,7 @@ using TMPro;
 
 public class UITextScore : MonoBehaviour
 {
-    public int score;
+    public float score;
 
     private TextMeshProUGUI scoreText;
     // Start is called before the first frame update

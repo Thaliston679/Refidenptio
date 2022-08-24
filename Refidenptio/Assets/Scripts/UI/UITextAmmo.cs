@@ -6,8 +6,8 @@ using TMPro;
 
 public class UITextAmmo : MonoBehaviour
 {
-    public int qtdAmmo;
-    public int maxAmmo;
+    public float qtdAmmo;
+    public float maxAmmo;
 
     private TextMeshProUGUI ammoText;
 

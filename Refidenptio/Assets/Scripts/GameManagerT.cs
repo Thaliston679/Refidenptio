@@ -11,13 +11,14 @@ public class GameManagerT : MonoBehaviour
 
     public UITextScore uITextScore;
     private int score;
-    public int qtdAmmo;
-    public int maxAmmo;
+    public float qtdAmmo;
+    public float maxAmmo;
 
     public float playerHP = 100;
     public float playerHPMax = 100;
 
     public GameObject hpFill;
+    public GameObject ammoFill;
 
     public int defeatedEnemies;
 
@@ -35,11 +36,15 @@ public class GameManagerT : MonoBehaviour
         uITextScore.score = score;
 
         HPLimit();
-        HPBar();
         GameOver();
+
+        HPBar();
+        AMMOBar();
 
         qtdAmmo = playerWeapon.qtdAmmo;
         maxAmmo = playerWeapon.maxAmmo;
+
+        FastProcess();
     }
 
     public void Killing(int enemyScore)
@@ -62,9 +67,24 @@ public class GameManagerT : MonoBehaviour
 
     public void HPBar()
     {
-        float playerFill = (playerHP / 100);
-        hpFill.GetComponent<Image>().fillAmount = playerFill;
-        Debug.Log(playerFill);
+        if(playerHPMax != 0)
+        {
+            float playerFill = (playerHP / playerHPMax);
+            hpFill.GetComponent<Image>().fillAmount = playerFill;
+            Debug.Log(playerFill);
+        }
+        
+    }
+
+    public void AMMOBar()
+    {
+        if(maxAmmo != 0)
+        {
+            float playerFill = (qtdAmmo / maxAmmo);
+            ammoFill.GetComponent<Image>().fillAmount = playerFill;
+            Debug.Log(playerFill);
+        }
+        
     }
 
     public void GameOver()
@@ -79,5 +99,16 @@ public class GameManagerT : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+    void FastProcess()
+    {
+        if (Input.GetKey(KeyCode.F))
+        {
+            Time.timeScale = 20;
+        }
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            Time.timeScale = 1;
+        }
     }
 }

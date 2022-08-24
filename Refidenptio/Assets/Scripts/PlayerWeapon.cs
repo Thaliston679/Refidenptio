@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerWeapon : MonoBehaviour
 {
     public Transform aimC;
-    public int qtdAmmo;
-    public int maxAmmo;
+    public float qtdAmmo = 30;
+    public float maxAmmo = 30;
     private bool canShoot = true;
 
     public Animator animator;

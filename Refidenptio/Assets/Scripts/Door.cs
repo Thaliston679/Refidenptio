@@ -7,21 +7,24 @@ public class Door : MonoBehaviour
     public Animator door;
     public GameObject room;
     public bool activated = false;
-    /*
-    public GameObject player;
-    public GameObject gamaManagerT;
-    */
+    public int enemiesToUnlock;
+    //public GameObject player;
+    public GameManagerT gamaManagerT;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            OpenDoor();
-            if (!activated)
+            if (gamaManagerT.defeatedEnemies >= enemiesToUnlock)
             {
-                room.SetActive(true);
-                activated = true;
+                OpenDoor();
+                if (!activated)
+                {
+                    room.SetActive(true);
+                    activated = true;
+                }
             }
+            
         }
     }
 

@@ -46,7 +46,7 @@ public class PlayerMove : MonoBehaviour
     IEnumerator DamageT()
     {
         damageT.SetActive(true);
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.5f);
         damageT.SetActive(false);
     }
 

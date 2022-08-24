@@ -6,7 +6,7 @@ using TMPro;
 
 public class UITextHp : MonoBehaviour
 {
-    public int hp;
+    public float hp;
 
     private TextMeshProUGUI hpText;
     // Start is called before the first frame update
