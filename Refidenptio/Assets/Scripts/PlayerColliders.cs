@@ -11,14 +11,20 @@ public class PlayerColliders : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ammo"))
         {
-            playerWeapon.GetAmmo(10);
-            Destroy(other.gameObject);
+            if(gameManagerT.qtdAmmo < gameManagerT.maxAmmo)
+            {
+                playerWeapon.GetAmmo(10);
+                Destroy(other.gameObject);
+            }
         }
 
         if (other.gameObject.CompareTag("HP"))
         {
-            gameManagerT.GetHP(10);
-            Destroy(other.gameObject);
+            if(gameManagerT.playerHP < gameManagerT.playerHPMax)
+            {
+                gameManagerT.GetHP(10);
+                Destroy(other.gameObject);
+            }
         }
     }
 }

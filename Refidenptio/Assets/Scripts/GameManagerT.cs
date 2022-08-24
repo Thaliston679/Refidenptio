@@ -11,9 +11,11 @@ public class GameManagerT : MonoBehaviour
 
     public UITextScore uITextScore;
     private int score;
+    public int qtdAmmo;
+    public int maxAmmo;
 
     public float playerHP = 100;
-    private float playerHPMax = 100;
+    public float playerHPMax = 100;
 
     public GameObject hpFill;
 
@@ -35,6 +37,9 @@ public class GameManagerT : MonoBehaviour
         HPLimit();
         HPBar();
         GameOver();
+
+        qtdAmmo = playerWeapon.qtdAmmo;
+        maxAmmo = playerWeapon.maxAmmo;
     }
 
     public void Killing(int enemyScore)
@@ -64,7 +69,7 @@ public class GameManagerT : MonoBehaviour
 
     public void GameOver()
     {
-        if(playerHP < 0)
+        if(playerHP <= 0)
         {
             SceneManager.LoadScene(0);
         }
