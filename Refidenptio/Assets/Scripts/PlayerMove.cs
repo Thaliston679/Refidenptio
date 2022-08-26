@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     public static PlayerMove Player;
     private Rigidbody rb;
-    private Animator anim;
+    public Animator anim;
     public GameObject damageT;
     public GameManagerT gameManagerT;
 
