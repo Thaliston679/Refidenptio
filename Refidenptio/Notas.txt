@@ -11,3 +11,54 @@ Consertar pulo que para de funcionar, tirando o box collider de cada bloco na pa
 Criar animações de ataque inimigos
 
 Diminuir tamanho da fonte do Alerta de Fotossensibilidade
+
+Fazer um gameObject q passe as variaveis do Global Volume e permita nas configurações ativar e desativar os efeitos de tela e mudar a qualidade do jogo.
+
+Criar métodos diferentes pra cada tipo de ataque do boss.
+Ex:
+IEnumerator ATK1(){
+	for(i = 0; i < 8; i++){
+		atq e mude o angulo em 30
+	}
+	espere 1 segundo
+	for(i = 15; i < 8; i++){
+		atq e mude o angulo em 30
+	}
+}
+
+IEnumerator ATK2(){
+	atq na direção do player
+	espere 1 s e atq dnv
+}
+
+IEnumerator ATK2(){
+	atq na direção do player
+	espere 0.5 s e atq dnv de forma circular dando 2 voltas de ataques
+}
+
+
+Botão de pause
+Opção de recomeçar
+Fazer com q as flores e os HP restaurem a cada X segundos ao invés de destruir e reduzir a quantidade no mapa
+
+Preparar os atq dos inimigos a distancia
+
+Fazer os escudos Cruz do padre
+
+Fazer um tipo de bala do Boss q segue o player devagar e cria uma enorme explosão com um tempo
+
+Pensar numa tela ao derrotar o anjo (Levar o player para uma espécie de paraíso, com flores e uma enorme área aberta)
+
+Refazer o tileset:
+Uma área cheia de labirintos pras aranhas.
+Uma área "aberta" para os magecides com algumas colunas.
+Salinhas com flores e corações.
+Atalhos q liberam ao passar pela área.
+Porta secreta mascarada com mesmo tile da parede q leva para uma área secreta
+
+
+Mostrar porcentagem de acerto e porcentagem de inimigos derrotados e mostrar velocidade com que o jogo foi concluido.
+
+Se possível adicionar vários saves status. (Ou 1 só)
+
+Fazer arte para inimigos mortos no chão
