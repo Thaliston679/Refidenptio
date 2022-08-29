@@ -30,6 +30,19 @@ public class PlayerColliders : MonoBehaviour
                 Destroy(other.gameObject);
             }
         }
+
+        if (other.gameObject.CompareTag("Bullet"))
+        {
+            if (!onDamage)
+            {
+                StartCoroutine(DamagePlayer(other.gameObject.GetComponent<EnemyBullet>().damage));
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                Destroy(other.gameObject);
+            }
+        }
     }
 
     private void OnCollisionStay(Collision collision)
@@ -38,17 +51,17 @@ public class PlayerColliders : MonoBehaviour
         {
             if (!onDamage)
             {
-                StartCoroutine(DamagePlayer());
+                StartCoroutine(DamagePlayer(10));
             }
         }
     }
 
-    IEnumerator DamagePlayer()
+    IEnumerator DamagePlayer(float damage)
     {
         onDamage = true;
         damageEffect.SetActive(true);
 
-        gameManagerT.playerHP -= 10;
+        gameManagerT.playerHP -= damage;
 
         playerMove.anim.SetTrigger("Damage");
 
