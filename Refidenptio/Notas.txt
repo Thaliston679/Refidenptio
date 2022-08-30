@@ -1,16 +1,16 @@
-Criar porta com animação que abre por quantidade de inimigos mortos
+•Criar porta com animação que abre por quantidade de inimigos mortos•
 
-Empty Object que armazena os inimigos de uma certa área e que são desbloqueados ao abrir a porta depois de finalizar todos de uma área
+•Empty Object que armazena os inimigos de uma certa área e que são desbloqueados ao abrir a porta depois de finalizar todos de uma área•
 
 •Script para HP inimigo•
 
-Fazer o Player perder HP com inimigos melee e inimigos ranged
+•Fazer o Player perder HP com inimigos melee e inimigos ranged•
 
 Consertar pulo que para de funcionar, tirando o box collider de cada bloco na parede e substituindo por um só para cada parede
 
-Criar animações de ataque inimigos
+Criar animações de ataque inimigos-----
 
-Diminuir tamanho da fonte do Alerta de Fotossensibilidade
+•Diminuir tamanho da fonte do Alerta de Fotossensibilidade•
 
 Fazer um gameObject q passe as variaveis do Global Volume e permita nas configurações ativar e desativar os efeitos de tela e mudar a qualidade do jogo.
 

@@ -22,10 +22,11 @@ public class GameManagerT : MonoBehaviour
 
     public int defeatedEnemies;
 
+    public bool pausedGame = false;
+
     private void Start()
     {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
+        AtivarMouse();
     }
 
     // Update is called once per frame
@@ -45,6 +46,7 @@ public class GameManagerT : MonoBehaviour
         maxAmmo = playerWeapon.maxAmmo;
 
         FastProcess();
+        PauseGame();
     }
 
     public void Killing(int enemyScore)
@@ -100,6 +102,12 @@ public class GameManagerT : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
+
+    public void AtivarMouse()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
     void FastProcess()
     {
         if (Input.GetKey(KeyCode.F))
@@ -109,6 +117,25 @@ public class GameManagerT : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F))
         {
             Time.timeScale = 1;
+        }
+    }
+
+    void PauseGame()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (pausedGame)
+            {
+                pausedGame = false;
+                Time.timeScale = 0;
+                DesativarMouse();
+            }
+            else
+            {
+                pausedGame = true;
+                Time.timeScale = 1;
+                AtivarMouse();
+            }
         }
     }
 }

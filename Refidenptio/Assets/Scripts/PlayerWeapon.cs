@@ -111,7 +111,7 @@ public class PlayerWeapon : MonoBehaviour
             qtdAmmo--;
             RaycastHit hit;
 
-            if (Physics.Raycast(aimC.position, aimC.TransformDirection(Vector3.forward), out hit, 20f /*Mathf.Infinity*/ ))
+            if (Physics.Raycast(aimC.position, aimC.TransformDirection(Vector3.forward), out hit, 20f, 7 /*Mathf.Infinity*/ ))
             {
                 Debug.DrawRay(aimC.position, aimC.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 

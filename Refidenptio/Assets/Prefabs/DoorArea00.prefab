@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 6053780443342831900}
   - component: {fileID: 6053780443342831903}
   - component: {fileID: 6053780443342831901}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: DoorArea00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
