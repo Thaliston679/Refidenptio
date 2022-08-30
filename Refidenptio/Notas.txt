@@ -62,3 +62,6 @@ Mostrar porcentagem de acerto e porcentagem de inimigos derrotados e mostrar vel
 Se possível adicionar vários saves status. (Ou 1 só)
 
 Fazer arte para inimigos mortos no chão
+
+Botão direito do mouse consome vida para restaurar munição
+1 segundo para ativar a habilidade e depois restaura 1 hp a cada 0.5 segundos
