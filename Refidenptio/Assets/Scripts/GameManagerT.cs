@@ -127,13 +127,13 @@ public class GameManagerT : MonoBehaviour
             if (pausedGame)
             {
                 pausedGame = false;
-                Time.timeScale = 0;
+                Time.timeScale = 1;
                 DesativarMouse();
             }
             else
             {
                 pausedGame = true;
-                Time.timeScale = 1;
+                Time.timeScale = 0;
                 AtivarMouse();
             }
         }
