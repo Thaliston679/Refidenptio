@@ -40,4 +40,9 @@ public class EnemyBullet : MonoBehaviour
     {
         return damage;
     }
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        Destroy(this.gameObject, 0.01f);
+    }*/
 }
