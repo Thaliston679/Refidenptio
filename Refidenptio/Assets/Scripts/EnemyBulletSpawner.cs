@@ -12,7 +12,59 @@ public class EnemyBulletSpawner : MonoBehaviour
     private bool attacking = false;
     public GameObject bullet;
 
-    // Update is called once per frame
+    public bool[] typeBulletPreset = { false, false, false, false, false, false }; //Valores predefinidos para projétis do inimigo
+
+    private void Start()
+    {
+        if (typeBulletPreset[0]) //
+        {
+            /*delay = null;
+            speedBullet = null;
+            lifeTimeBullet = null;
+            damageBullet = null;
+            bulletType = null;*/
+        }
+        else if (typeBulletPreset[1]) // Entity
+        {
+            delay = 0.5f;
+            speedBullet = 15;
+            lifeTimeBullet = 2;
+            damageBullet = 2;
+            bulletType = 1;
+        }
+        else if (typeBulletPreset[2]) //
+        {
+            /*delay = null;
+            speedBullet = null;
+            lifeTimeBullet = null;
+            damageBullet = null;
+            bulletType = null;*/
+        }
+        else if (typeBulletPreset[3]) // Magecide
+        {
+            delay = 1;
+            speedBullet = 0.25f;
+            lifeTimeBullet = 8;
+            damageBullet = 20;
+            bulletType = 3;
+        }
+        else if (typeBulletPreset[4]) // Chaeyes
+        {
+            delay = 2;
+            speedBullet = 1.5f;
+            lifeTimeBullet = 4;
+            damageBullet = 70;
+            bulletType = 4;
+        }
+        else if (typeBulletPreset[5]) // Bat
+        {
+            delay = 4;
+            speedBullet = 1;
+            lifeTimeBullet = 4;
+            damageBullet = 40;
+            bulletType = 5;
+        }
+    }
     void Update()
     {
         if (!attacking)

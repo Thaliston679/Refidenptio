@@ -65,3 +65,9 @@ Fazer arte para inimigos mortos no chão
 
 Botão direito do mouse consome vida para restaurar munição
 1 segundo para ativar a habilidade e depois restaura 1 hp a cada 0.5 segundos
+
+Caso o Player cair para fora do cenário (Jogar ele para uma área qualquer do mapa ou setar o Y para o valor do chão)
+
+Perguntas:
+Como rotacionar em Y (Adicionar rotação) num objeto Ex: Mover + 45 graus ou - 30 graus
+Como diminuir uso da CPU pelo URP
