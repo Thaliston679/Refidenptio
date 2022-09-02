@@ -36,10 +36,11 @@ public class EnemyBullet : MonoBehaviour
     public void DisableBillBoard()
     {
         GetComponent<Billboard>().enabled = false;
+
         //Adicionar método para rotacionar Y pelo valor passado
         if(randRotateY!= 0)
         {
-            transform.Rotate(randRotateY, 0.0f, 0.0f, Space.Self);
+            transform.Rotate(0, randRotateY, 0, Space.Self);
         }
     }
 

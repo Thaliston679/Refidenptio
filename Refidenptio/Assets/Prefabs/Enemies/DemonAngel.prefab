@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179688602974583245}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
   m_Name: 
@@ -49,7 +49,6 @@ MonoBehaviour:
   lifeTimeBullet: 4
   damageBullet: 40
   bulletType: 5
-  randRotateY: 0
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
   typeBulletPreset: 000000000001
 --- !u!1 &4495956694032484652
@@ -91,7 +90,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4495956694032484652}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
   m_Name: 
@@ -101,7 +100,6 @@ MonoBehaviour:
   lifeTimeBullet: 4
   damageBullet: 40
   bulletType: 5
-  randRotateY: 0
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
   typeBulletPreset: 000000000001
 --- !u!1 &4795123893677112584
@@ -10004,7 +10002,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5414567461153253485}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
   m_Name: 
@@ -10014,7 +10012,6 @@ MonoBehaviour:
   lifeTimeBullet: 10
   damageBullet: 20
   bulletType: 3
-  randRotateY: 0
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
   typeBulletPreset: 000000000000
 --- !u!1 &6273230957683285018
@@ -10057,7 +10054,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273230957683285018}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
   m_Name: 
@@ -10067,7 +10064,6 @@ MonoBehaviour:
   lifeTimeBullet: 2
   damageBullet: 2
   bulletType: 1
-  randRotateY: 0
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
   typeBulletPreset: 000100000000
 --- !u!114 &3942145576879236079
@@ -10082,3 +10078,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45558c60ce7c66d49afb67e816eb790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedBullet: 0.5
+  lifeTimeBullet: 3
+  damageBullet: 1
+  bulletType: 0
+  randRotateY: 0
+  bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
