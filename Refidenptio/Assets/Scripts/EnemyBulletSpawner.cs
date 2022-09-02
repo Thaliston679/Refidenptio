@@ -9,6 +9,7 @@ public class EnemyBulletSpawner : MonoBehaviour
     public float lifeTimeBullet;
     public float damageBullet;
     public int bulletType;
+    public float randRotateY;
     private bool attacking = false;
     public GameObject bullet;
 
@@ -81,6 +82,7 @@ public class EnemyBulletSpawner : MonoBehaviour
         newBullet.GetComponent<EnemyBullet>().speed = speedBullet;
         newBullet.GetComponent<EnemyBullet>().lifeTime = lifeTimeBullet;
         newBullet.GetComponent<EnemyBullet>().damage = damageBullet;
+        newBullet.GetComponent<EnemyBullet>().randRotateY = randRotateY;
         newBullet.GetComponent<Animator>().SetInteger("bulletType", bulletType);
 
         yield return new WaitForSeconds(delay);

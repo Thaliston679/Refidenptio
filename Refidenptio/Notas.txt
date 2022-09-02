@@ -80,3 +80,5 @@ Flor de Insânia = AMMO
 Refil de sanidade = HP
 
 Sacrifica HP para restaurar AMMO (não pode restaurar se hp <= 1)
+
+Projéteis inimigos indo para trás

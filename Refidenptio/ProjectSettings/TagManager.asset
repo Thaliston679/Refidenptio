@@ -9,6 +9,7 @@ TagManager:
   - Ammo
   - HP
   - Bullet
+  - Door
   layers:
   - Default
   - TransparentFX

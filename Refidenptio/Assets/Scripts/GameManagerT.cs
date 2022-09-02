@@ -73,7 +73,7 @@ public class GameManagerT : MonoBehaviour
         {
             float playerFill = (playerHP / playerHPMax);
             hpFill.GetComponent<Image>().fillAmount = playerFill;
-            Debug.Log(playerFill);
+            //Debug.Log(playerFill);
         }
         
     }
@@ -84,7 +84,7 @@ public class GameManagerT : MonoBehaviour
         {
             float playerFill = (qtdAmmo / maxAmmo);
             ammoFill.GetComponent<Image>().fillAmount = playerFill;
-            Debug.Log(playerFill);
+            //Debug.Log(playerFill);
         }
         
     }
