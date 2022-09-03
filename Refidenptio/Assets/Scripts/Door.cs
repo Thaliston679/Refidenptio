@@ -24,9 +24,26 @@ public class Door : MonoBehaviour
                     activated = true;
                 }
             }
-            
         }
     }
+
+    /*
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (gamaManagerT.defeatedEnemies >= enemiesToUnlock)
+            {
+                OpenDoor();
+                if (!activated)
+                {
+                    room.SetActive(true);
+                    activated = true;
+                }
+            }
+        }
+    }
+    */
 
     private void OnTriggerExit(Collider other)
     {
