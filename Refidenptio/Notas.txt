@@ -8,13 +8,13 @@
 
 (Muito complicado por enquanto) Consertar pulo que para de funcionar, tirando o box collider de cada bloco na parede e substituindo por um só para cada parede
 
-Criar animações de ataque inimigos-----
+(Não terá) Criar animações de ataque inimigos-----
 
 •Diminuir tamanho da fonte do Alerta de Fotossensibilidade•
 
-Fazer um gameObject q passe as variaveis do Global Volume e permita nas configurações ativar e desativar os efeitos de tela e mudar a qualidade do jogo.
+(•)Fazer um gameObject q passe as variaveis do Global Volume e permita nas configurações ativar e desativar os efeitos de tela e mudar a qualidade do jogo.
 
-Criar métodos diferentes pra cada tipo de ataque do boss.
+•Criar métodos diferentes pra cada tipo de ataque do boss.•
 Ex:
 IEnumerator ATK1(){
 	for(i = 0; i < 8; i++){
@@ -106,3 +106,5 @@ Placa que aparece um toturial (gif) com texto em baixo explicando o principal do
 Criar umas portas secretas com os mesmos tiles das paredes q abrem dps de matar x inimigos e fazer a area de abrir de somente 1 bloco. E um corredor de 1 bloco tbm
 
 Criar uma varivel no script de spawn do boss com distY em relação a mão do boss. Para as bala de morcego spawnarem na cabeça dela e demais nas mãos
+
+Mouse não some ao iniciar o jogo
