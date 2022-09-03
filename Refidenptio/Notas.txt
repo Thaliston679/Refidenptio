@@ -37,9 +37,9 @@ IEnumerator ATK2(){
 }
 
 
-Botão de pause
+(Em andamento)Botão de pause
 
-Interromper Script de movimentação da câmera durante pause
+•Interromper Script de movimentação da câmera durante pause•
 
 Opção de recomeçar
 
@@ -57,7 +57,7 @@ Refazer o tileset:
 Uma área cheia de labirintos pras aranhas.
 Uma área "aberta" para os magecides com algumas colunas.
 Salinhas com flores e corações.
-Atalhos q liberam ao passar pela área.
+()Atalhos q liberam ao passar pela área.
 Porta secreta mascarada com mesmo tile da parede q leva para uma área secreta
 
 
@@ -65,12 +65,12 @@ Mostrar porcentagem de acerto e porcentagem de inimigos derrotados e mostrar vel
 
 Se possível adicionar vários saves status. (Ou 1 só)
 
-Fazer arte para inimigos mortos no chão
+(Em andamento)Fazer arte para inimigos mortos no chão
 
 Botão direito do mouse consome vida para restaurar munição
 1 segundo para ativar a habilidade e depois restaura 1 hp a cada 0.5 segundos
 
-Caso o Player cair para fora do cenário (Jogar ele para uma área qualquer do mapa ou setar o Y para o valor do chão)
+(!)Caso o Player cair para fora do cenário (Jogar ele para uma área qualquer do mapa ou setar o Y para o valor do chão)
 
 Perguntas:
 •Como rotacionar em Y (Adicionar rotação) num objeto Ex: Mover + 45 graus ou - 30 graus•
@@ -81,11 +81,11 @@ Refil de sanidade = HP
 
 Sacrifica HP para restaurar AMMO (não pode restaurar se hp <= 1)
 
-Projéteis inimigos indo para trás
+•Projéteis inimigos indo para trás•
 
-Porta fechando na cara
+•(Falta testar)Porta fechando na cara•
 
-Parede sem fricção
+(!)Parede sem fricção
 
 Criar um mininmapa que vai se abrindo conforme progride no level. E mostra a posição e rotação local
 
@@ -108,3 +108,5 @@ Criar umas portas secretas com os mesmos tiles das paredes q abrem dps de matar 
 Criar uma varivel no script de spawn do boss com distY em relação a mão do boss. Para as bala de morcego spawnarem na cabeça dela e demais nas mãos
 
 Mouse não some ao iniciar o jogo
+
+Área do boss vai ter 5 de altura abrindo aos poucos
