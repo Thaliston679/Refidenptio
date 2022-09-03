@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1179688602974583245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
   m_Name: 
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4495956694032484652}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
   m_Name: 
@@ -9809,7 +9809,6 @@ GameObject:
   - component: {fileID: 4795123894562718612}
   - component: {fileID: 4795123894562718617}
   - component: {fileID: 4795123894562718616}
-  - component: {fileID: 4795123894562718619}
   - component: {fileID: 4795123894562718618}
   m_Layer: 0
   m_Name: DemonAngel
@@ -9935,21 +9934,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfba1b49f6956e428261fdef4a6543e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 20
+  enemyHP: 50
   enemyScoreValue: 100
---- !u!114 &4795123894562718619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4795123894562718613}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dced68d6527d9404eb87c8f0a5bae3c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!65 &4795123894562718618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9979,7 +9965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9017458827978744449
 Transform:
   m_ObjectHideFlags: 0
@@ -10002,7 +9988,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5414567461153253485}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
   m_Name: 
@@ -10023,7 +10009,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8322673609412953299}
-  - component: {fileID: 4640354219036151878}
   - component: {fileID: 3942145576879236079}
   m_Layer: 0
   m_Name: PointBulletHell
@@ -10040,32 +10025,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6273230957683285018}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0292, y: 0.6886, z: 0}
+  m_LocalPosition: {x: 0.0292, y: 0.681, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4795123894562718614}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4640354219036151878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6273230957683285018}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 5
-  speedBullet: 15
-  lifeTimeBullet: 2
-  damageBullet: 2
-  bulletType: 1
-  bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
-  typeBulletPreset: 000100000000
 --- !u!114 &3942145576879236079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10078,9 +10044,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45558c60ce7c66d49afb67e816eb790c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossState: 0
+  timeBossState: 5
+  currentTimeBossState: 0
+  timeAttackBoss: 0.5
+  currentTimeAttackBoss: 0
+  AttackBoss: 1
   speedBullet: 0.5
   lifeTimeBullet: 3
   damageBullet: 1
-  bulletType: 0
   randRotateY: 0
+  bulletType: 0
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}

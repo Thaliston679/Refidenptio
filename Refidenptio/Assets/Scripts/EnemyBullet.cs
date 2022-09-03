@@ -13,7 +13,6 @@ public class EnemyBullet : MonoBehaviour
     private float randY;
 
     public float randRotateY = 0;
-
     void Start()
     {
         Invoke("DisableBillBoard", 0.05f);
@@ -43,7 +42,6 @@ public class EnemyBullet : MonoBehaviour
             transform.Rotate(0, randRotateY, 0, Space.Self);
         }
     }
-
     public float DoDamage()
     {
         return damage;
@@ -56,14 +54,4 @@ public class EnemyBullet : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    */
 }
