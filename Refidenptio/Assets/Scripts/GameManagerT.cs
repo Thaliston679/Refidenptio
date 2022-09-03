@@ -9,6 +9,9 @@ public class GameManagerT : MonoBehaviour
     public UITextAmmo uITextAmmo;
     public PlayerWeapon playerWeapon;
 
+    public PlayerCamLook pCamLoock;
+    public PlayerCamRotation pCamRot;
+
     public UITextScore uITextScore;
     private int score;
     public float qtdAmmo;
@@ -23,10 +26,11 @@ public class GameManagerT : MonoBehaviour
     public int defeatedEnemies;
 
     public bool pausedGame = false;
+    public GameObject pauseMenu;
 
     private void Start()
     {
-        AtivarMouse();
+        EnableMouse();
     }
 
     // Update is called once per frame
@@ -97,17 +101,32 @@ public class GameManagerT : MonoBehaviour
         }
     }
 
-    public void DesativarMouse()
+    public void DisableMouse()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void AtivarMouse()
+    public void EnableMouse()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
+
+    public void DisableCameraMovement()
+    {
+        pCamLoock.enabled = false;
+        pCamRot.enabled = false;
+        playerWeapon.enabled = false;
+    }
+
+    public void EnableCameraMovement()
+    {
+        pCamLoock.enabled = true;
+        pCamRot.enabled = true;
+        playerWeapon.enabled = true;
+    }
+
     void FastProcess()
     {
         if (Input.GetKey(KeyCode.F))
@@ -122,19 +141,23 @@ public class GameManagerT : MonoBehaviour
 
     void PauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (pausedGame)
             {
                 pausedGame = false;
                 Time.timeScale = 1;
-                DesativarMouse();
+                DisableMouse();
+                EnableCameraMovement();
+                pauseMenu.SetActive(false);
             }
             else
             {
                 pausedGame = true;
                 Time.timeScale = 0;
-                AtivarMouse();
+                EnableMouse();
+                DisableCameraMovement();
+                pauseMenu.SetActive(true);
             }
         }
     }
