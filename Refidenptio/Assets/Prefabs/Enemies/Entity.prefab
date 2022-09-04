@@ -44,12 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fe2ff717350b164c81fe2fabea4a99e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.5
+  delay: 0.75
   speedBullet: 15
-  lifeTimeBullet: 3
+  lifeTimeBullet: 2
   damageBullet: 2
   bulletType: 1
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
+  typeBulletPreset: 000100000000
 --- !u!1 &8278651673687896851
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +81,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8278651673687896851}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.7807388, y: -1.3966112, z: -11.179237}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -185,7 +186,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.79, y: 1.46, z: 0.2}
+  m_Size: {x: 0.79, y: 1.46, z: 0.75}
   m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!114 &8278651673687896877
 MonoBehaviour:
@@ -211,8 +212,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfba1b49f6956e428261fdef4a6543e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 3
-  enemyScoreValue: 3
+  enemyHP: 4
+  enemyScoreValue: 6
 --- !u!195 &8278651673687896875
 NavMeshAgent:
   m_ObjectHideFlags: 0

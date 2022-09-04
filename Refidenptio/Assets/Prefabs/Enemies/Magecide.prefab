@@ -50,6 +50,7 @@ MonoBehaviour:
   damageBullet: 20
   bulletType: 3
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
+  typeBulletPreset: 000000010000
 --- !u!1 &2287513880351544153
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +79,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2287513880351544153}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.060738, y: -1.2516117, z: -9.139236}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -170,8 +171,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.66, y: 1.52, z: 0.19999999}
-  m_Center: {x: 0.1, y: -0.04, z: 0}
+  m_Size: {x: 0.67, y: 1.52, z: 0.75}
+  m_Center: {x: -0.07, y: -1.05, z: 0}
 --- !u!114 &2287513880351544159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,5 +197,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfba1b49f6956e428261fdef4a6543e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHP: 3
-  enemyScoreValue: 5
+  enemyHP: 5
+  enemyScoreValue: 7
