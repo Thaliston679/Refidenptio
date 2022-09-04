@@ -110,3 +110,28 @@ Criar uma varivel no script de spawn do boss com distY em relação a mão do bo
 Mouse não some ao iniciar o jogo
 
 Área do boss vai ter 5 de altura abrindo aos poucos
+
+Itens nas configurações:
+Aberração cromática
+Bloom
+Vinheta
+Motion blur (Desfoque/Borrão de movimento)
+Gráfico:
+1920x1080
+1280x720
+Resolução:
+Alta
+Média
+Baixa
+
+//
+Gráficos:   1920x1080      |    1280x720      |    720x480
+Resolução:   Alta      |    Média      |    Baixa
+Aberração cromática:
+Bloom:
+Desfoque de movimento:
+Vinheta:
+//
+
+Script para mudar o Global Volume variaveis
+
