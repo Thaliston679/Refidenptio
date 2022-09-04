@@ -26,7 +26,7 @@ public class EnemyBulletSpawner : MonoBehaviour
         }
         else if (typeBulletPreset[1]) // Entity
         {
-            delay = 0.5f;
+            delay = 0.75f;
             speedBullet = 15;
             lifeTimeBullet = 2;
             damageBullet = 2;
