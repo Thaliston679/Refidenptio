@@ -12,8 +12,7 @@ public class DropDown : MonoBehaviour
     void Start()
     {
         dropDown.value = QualitySettings.GetQualityLevel();
-        dropDown.value = Screen.currentResolution.height;
-        Debug.Log(Screen.currentResolution.height);
+        //dropDown.value = Screen.currentResolution.height;
     }
 
     public void ChangeLevel(int value)
