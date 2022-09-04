@@ -25,6 +25,7 @@ public class GameManagerT : MonoBehaviour
 
     public int defeatedEnemies;
 
+    public bool inGame = false;
     public bool pausedGame = false;
     public bool inConfigs = false;
 
@@ -145,13 +146,16 @@ public class GameManagerT : MonoBehaviour
 
     void FastProcess()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (inGame)
         {
-            Time.timeScale = 20;
-        }
-        if (Input.GetKeyUp(KeyCode.F))
-        {
-            Time.timeScale = 1;
+            if (Input.GetKey(KeyCode.F))
+            {
+                Time.timeScale = 20;
+            }
+            if (Input.GetKeyUp(KeyCode.F))
+            {
+                Time.timeScale = 1;
+            }
         }
     }
 
@@ -166,7 +170,11 @@ public class GameManagerT : MonoBehaviour
 
     public void DisablePause()
     {
-        if (inConfigs)
+        if (inConfigs && !inGame)
+        {
+            DisableConfig();
+        }
+        else if (inConfigs && inGame)
         {
             DisableConfig();
         }
@@ -181,9 +189,14 @@ public class GameManagerT : MonoBehaviour
             
     }
 
+    public void InGame(bool onOff)
+    {
+        inGame = onOff;
+    }
+
     void PauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
+        if ((Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape)) && inGame)
         {
             if (pausedGame)
             {
@@ -194,5 +207,15 @@ public class GameManagerT : MonoBehaviour
                 EnablePause();
             }
         }
+    }
+
+    public void ResetTimeScale()
+    {
+        Time.timeScale = 1f;
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

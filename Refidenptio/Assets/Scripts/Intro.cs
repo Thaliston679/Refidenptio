@@ -7,8 +7,7 @@ using UnityEngine.SceneManagement;
 public class Intro : MonoBehaviour
 {
     public bool NextScene = false;
-    public GameObject intro;
-    public GameObject level1;
+    public GameObject mainMenu;
 
     void Start()
     {
@@ -36,14 +35,6 @@ public class Intro : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        
-        SceneManager.LoadScene(1);
-        
-    }
-
-    public void GoToLevel()
-    {
-        intro.SetActive(false);
-        level1.SetActive(true);
+        mainMenu.SetActive(true);
     }
 }
