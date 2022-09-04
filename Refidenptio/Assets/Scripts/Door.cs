@@ -50,16 +50,29 @@ public class Door : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             CloseDoor();
+            Debug.Log("Fechou");
         }
     }
 
     public void OpenDoor()
     {
-        door.SetTrigger("Open");
+        door.SetBool("Close", false);
+        door.SetBool("Open", true);
+        /*if (door.GetBool("Close"))
+        {
+            door.SetBool("Close", false);
+            door.SetBool("Open", true);
+        }*/
     }
 
     public void CloseDoor()
     {
-        door.SetTrigger("Close");
+        door.SetBool("Open", false);
+        door.SetBool("Close", true);
+        /*if (door.GetBool("Open"))
+        {
+            door.SetBool("Open", false);
+            door.SetBool("Close", true);
+        }*/
     }
 }
