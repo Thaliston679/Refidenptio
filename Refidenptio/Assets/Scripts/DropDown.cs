@@ -54,6 +54,6 @@ public class DropDown : MonoBehaviour
 
     public void Resolution720()
     {
-        Screen.SetResolution(720, 480, true);
+        Screen.SetResolution(720, 408, true);
     }
 }

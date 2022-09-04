@@ -26,7 +26,11 @@ public class GameManagerT : MonoBehaviour
     public int defeatedEnemies;
 
     public bool pausedGame = false;
+    public bool inConfigs = false;
+
+    public GameObject mainMenu;
     public GameObject pauseMenu;
+    public GameObject configMenu;
 
     private void Start()
     {
@@ -127,6 +131,18 @@ public class GameManagerT : MonoBehaviour
         playerWeapon.enabled = true;
     }
 
+    public void EnableConfig()
+    {
+        configMenu.SetActive(true);
+        inConfigs = true;
+    }
+
+    public void DisableConfig()
+    {
+        configMenu.SetActive(false);
+        inConfigs = false;
+    }
+
     void FastProcess()
     {
         if (Input.GetKey(KeyCode.F))
@@ -139,25 +155,43 @@ public class GameManagerT : MonoBehaviour
         }
     }
 
+    public void EnablePause()
+    {
+        pausedGame = true;
+        Time.timeScale = 0;
+        EnableMouse();
+        DisableCameraMovement();
+        pauseMenu.SetActive(true);
+    }
+
+    public void DisablePause()
+    {
+        if (inConfigs)
+        {
+            DisableConfig();
+        }
+        else
+        {
+            pausedGame = false;
+            Time.timeScale = 1;
+            DisableMouse();
+            EnableCameraMovement();
+            pauseMenu.SetActive(false);
+        }
+            
+    }
+
     void PauseGame()
     {
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             if (pausedGame)
             {
-                pausedGame = false;
-                Time.timeScale = 1;
-                DisableMouse();
-                EnableCameraMovement();
-                pauseMenu.SetActive(false);
+                DisablePause();
             }
             else
             {
-                pausedGame = true;
-                Time.timeScale = 0;
-                EnableMouse();
-                DisableCameraMovement();
-                pauseMenu.SetActive(true);
+                EnablePause();
             }
         }
     }
