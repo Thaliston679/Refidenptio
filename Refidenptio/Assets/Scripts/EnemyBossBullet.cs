@@ -6,7 +6,7 @@ public class EnemyBossBullet : MonoBehaviour
 {
     public int bossState = 0;
 
-    public float timeBossState = 5f;
+    public float timeBossState = 3f;
     public float currentTimeBossState;
 
     public float timeAttackBoss = 0.5f;
