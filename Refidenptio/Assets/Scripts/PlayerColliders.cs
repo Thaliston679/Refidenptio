@@ -56,7 +56,7 @@ public class PlayerColliders : MonoBehaviour
         }
     }
 
-    IEnumerator DamagePlayer(float damage)
+    public IEnumerator DamagePlayer(float damage)
     {
         onDamage = true;
         damageEffect.SetActive(true);

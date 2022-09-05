@@ -12,6 +12,8 @@ public class GameManagerT : MonoBehaviour
     public PlayerCamLook pCamLoock;
     public PlayerCamRotation pCamRot;
 
+    public PlayerColliders playerColliders;
+
     public UITextScore uITextScore;
     private int score;
     public float qtdAmmo;
@@ -32,6 +34,7 @@ public class GameManagerT : MonoBehaviour
     public GameObject mainMenu;
     public GameObject pauseMenu;
     public GameObject configMenu;
+    public GameObject gameOverMenu;
 
     private void Start()
     {
@@ -100,10 +103,32 @@ public class GameManagerT : MonoBehaviour
 
     public void GameOver()
     {
-        if(playerHP <= 0)
+        if(playerHP <= 0 && inGame)
         {
-            SceneManager.LoadScene(0);
+            inGame = false;
+            EnableMouse();
+            DisableCameraMovement();
+            Time.timeScale = 0;
+            gameOverMenu.SetActive(true);
         }
+    }
+
+    public void GameContinue()
+    {
+        playerWeapon.qtdAmmo = playerWeapon.maxAmmo;
+        playerHP = playerHPMax;
+        Time.timeScale = 1;
+        DisableMouse();
+        EnableCameraMovement();
+        gameOverMenu.SetActive(false);
+        playerColliders.DamagePlayer(0);
+        inGame = true;
+    }
+
+    public void GameRestart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     public void DisableMouse()
