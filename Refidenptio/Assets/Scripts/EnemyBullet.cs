@@ -18,7 +18,7 @@ public class EnemyBullet : MonoBehaviour
         Invoke("DisableBillBoard", 0.05f);
         rb = GetComponent<Rigidbody>();
         Destroy(this.gameObject, lifeTime);
-        randY = Random.Range(0.425f, 0.875f);
+        randY = Random.Range(0.425f, 0.7f);
     }
 
     void Update()
