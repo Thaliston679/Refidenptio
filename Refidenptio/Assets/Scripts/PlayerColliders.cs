@@ -11,6 +11,8 @@ public class PlayerColliders : MonoBehaviour
     public GameObject damageEffect;
     public bool onDamage = false;
 
+    public GameObject respawnFlower;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ammo"))
@@ -18,6 +20,7 @@ public class PlayerColliders : MonoBehaviour
             if(gameManagerT.qtdAmmo < gameManagerT.maxAmmo)
             {
                 playerWeapon.GetAmmo(10);
+                Instantiate(respawnFlower, other.transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
             }
         }

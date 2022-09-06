@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &875581053920508600
 Transform:
   m_ObjectHideFlags: 0
@@ -67,7 +67,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4920888382486583486
 Transform:
   m_ObjectHideFlags: 0
@@ -10073,3 +10073,7 @@ MonoBehaviour:
   randRotateY: 0
   bulletType: 0
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
+  bossHP: {fileID: 4795123894562718616}
+  bulletMagecide: {fileID: 5414567461153253485}
+  bulletBat: {fileID: 4495956694032484652}
+  bulletBat2: {fileID: 1179688602974583245}

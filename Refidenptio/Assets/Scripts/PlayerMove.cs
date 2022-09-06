@@ -30,10 +30,11 @@ public class PlayerMove : MonoBehaviour
         Movement();
         Run();
         Jump();
-        Damage();
+        //Damage();
         CheckY();
     }
 
+    /*
     void Damage()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -43,6 +44,7 @@ public class PlayerMove : MonoBehaviour
             gameManagerT.playerHP -= 10;
         }
     }
+    */
 
     IEnumerator DamageT()
     {
