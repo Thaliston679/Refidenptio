@@ -57,19 +57,19 @@ public class GameManagerT : MonoBehaviour
         qtdAmmo = playerWeapon.qtdAmmo;
         maxAmmo = playerWeapon.maxAmmo;
 
-        FastProcess();
+        //FastProcess();
         PauseGame();
 
-        Cheat();// !!!!!!!!!- Remover -!!!!!!!!!
+        //Cheat();// !!!!!!!!!- Remover -!!!!!!!!!
     }
 
-    public void Cheat()
+    /*public void Cheat()
     {
-        if (Input.GetKey(KeyCode.C) /*&& Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.T)*/ && Input.GetKey(KeyCode.Keypad8))
+        if (Input.GetKey(KeyCode.C) *//*&& Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.T)*//* && Input.GetKey(KeyCode.Keypad8))
         {
             defeatedEnemies = 184;
         }
-    }
+    }*/
 
     public void Killing(int enemyScore)
     {

@@ -447,6 +447,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: 7
   enemyScoreValue: 10
+  deadBodyGO: {fileID: 6884170682821459645, guid: ad119777fbca94546843347ca2e30c55, type: 3}
 --- !u!65 &6429771063932983163
 BoxCollider:
   m_ObjectHideFlags: 0

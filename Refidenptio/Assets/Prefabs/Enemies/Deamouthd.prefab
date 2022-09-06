@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: 3
   enemyScoreValue: 3
+  deadBodyGO: {fileID: 8661151569514059755, guid: 5254008b0a5e2464b806c785ffdf5e15, type: 3}
 --- !u!114 &630716048056372938
 MonoBehaviour:
   m_ObjectHideFlags: 0

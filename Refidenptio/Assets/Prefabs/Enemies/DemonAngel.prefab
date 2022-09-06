@@ -9808,6 +9808,7 @@ GameObject:
   - component: {fileID: 4795123894562718615}
   - component: {fileID: 4795123894562718612}
   - component: {fileID: 4795123894562718617}
+  - component: {fileID: 2992891242544285727}
   - component: {fileID: 4795123894562718616}
   - component: {fileID: 4795123894562718618}
   m_Layer: 0
@@ -9922,6 +9923,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d19297dfa501e40a47ed52a4b1565a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2992891242544285727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4795123894562718613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fd94f5f9bcccb54db195b171b2da1d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLife: {fileID: 0}
+  endGame: {fileID: 0}
+  gameManagerT: {fileID: 0}
 --- !u!114 &4795123894562718616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9936,6 +9952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: 50
   enemyScoreValue: 100
+  deadBodyGO: {fileID: 6884170682821459645, guid: ad119777fbca94546843347ca2e30c55, type: 3}
 --- !u!65 &4795123894562718618
 BoxCollider:
   m_ObjectHideFlags: 0

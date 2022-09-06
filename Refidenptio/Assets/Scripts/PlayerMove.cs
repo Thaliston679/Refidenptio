@@ -31,6 +31,7 @@ public class PlayerMove : MonoBehaviour
         Run();
         Jump();
         Damage();
+        CheckY();
     }
 
     void Damage()
@@ -95,6 +96,14 @@ public class PlayerMove : MonoBehaviour
        if(collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    void CheckY()
+    {
+        if(transform.position.y <= -30)
+        {
+            transform.position = new(24f, -0.7f, -28f);
         }
     }
 }

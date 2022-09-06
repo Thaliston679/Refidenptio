@@ -11,6 +11,8 @@ public class EnemyLifeAndDeath : MonoBehaviour
 
     private GameManagerT gameManagerT;
 
+    public GameObject deadBodyGO;
+
     private void Start()
     {
         gameManagerT = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManagerT>();
@@ -22,8 +24,10 @@ public class EnemyLifeAndDeath : MonoBehaviour
         {
             gameManagerT.Killing(enemyScoreValue);
             gameManagerT.defeatedEnemies++;
-            Destroy(this.gameObject);
+            GenerateDeadBody();
+            Destroy(this.gameObject, 0.01f);
             Debug.Log(gameManagerT.defeatedEnemies);
+            //Instanciar corpo morto
             //Aumentar em 1 o contador de inimigos mortos
         }
         TimerDamage();
@@ -48,6 +52,12 @@ public class EnemyLifeAndDeath : MonoBehaviour
             }
         }
 
+    }
+
+    public void GenerateDeadBody()
+    {
+        Vector3 deadBodyPos = new(transform.position.x, -0.5f, transform.position.z);
+        Instantiate(deadBodyGO, deadBodyPos, Quaternion.identity);
     }
 
     public void SetEnemyHp(int i)

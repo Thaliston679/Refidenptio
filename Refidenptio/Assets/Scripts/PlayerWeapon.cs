@@ -25,17 +25,17 @@ public class PlayerWeapon : MonoBehaviour
         Shoot();
         //ReloadAmmo();
         AmmoLimit();
-        Cheat();// !!!!!!!!!- Remover -!!!!!!!!!
+        //Cheat();// !!!!!!!!!- Remover -!!!!!!!!!
     }
 
-    public void Cheat()
+    /*public void Cheat()
     {
-        if(Input.GetKey(KeyCode.C) /*&& Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.T)*/ && Input.GetKey(KeyCode.Keypad9))
+        if(Input.GetKey(KeyCode.C) *//*&& Input.GetKey(KeyCode.H) && Input.GetKey(KeyCode.E) && Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.T)*//* && Input.GetKey(KeyCode.Keypad9))
         {
             maxAmmo = 9999;
             qtdAmmo = maxAmmo;
         }
-    }
+    }*/
 
     void Shoot()
     {
