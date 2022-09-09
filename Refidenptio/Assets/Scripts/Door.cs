@@ -10,11 +10,21 @@ public class Door : MonoBehaviour
     public int enemiesToUnlock;
     //public GameObject player;
     public GameManagerT gamaManagerT;
+    public bool playerinDoor = false;
+    public bool enemiesInDoor = false;
+    public int qtdEnemiesInDoor = 0;
+
+    private void Update()
+    {
+        //if (qtdEnemiesInDoor > 0) enemiesInDoor = true;
+        //else enemiesInDoor = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            playerinDoor = true;
             if (gamaManagerT.defeatedEnemies >= enemiesToUnlock)
             {
                 OpenDoor();
@@ -25,13 +35,10 @@ public class Door : MonoBehaviour
                 }
             }
         }
-    }
 
-    /*
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
+            //qtdEnemiesInDoor++;
             if (gamaManagerT.defeatedEnemies >= enemiesToUnlock)
             {
                 OpenDoor();
@@ -43,14 +50,28 @@ public class Door : MonoBehaviour
             }
         }
     }
-    */
+    
 
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            CloseDoor();
-            Debug.Log("Fechou");
+            playerinDoor = false;
+
+            if (!enemiesInDoor)
+            {
+                CloseDoor();
+            }
+        }
+
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            //qtdEnemiesInDoor--;
+
+            if (!playerinDoor)
+            {
+                CloseDoor();
+            }
         }
     }
 
@@ -74,5 +95,13 @@ public class Door : MonoBehaviour
             door.SetBool("Open", false);
             door.SetBool("Close", true);
         }*/
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            enemiesInDoor = true;
+        }
     }
 }

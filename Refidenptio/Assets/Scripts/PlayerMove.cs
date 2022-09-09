@@ -105,7 +105,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(transform.position.y <= -30)
         {
-            transform.position = new(24f, -0.7f, -28f);
+            transform.position = new(0, -0.6f, -2.5f);
         }
     }
 }
