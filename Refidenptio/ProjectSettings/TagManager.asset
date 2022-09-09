@@ -10,6 +10,7 @@ TagManager:
   - HP
   - Bullet
   - Door
+  - DeathEnemy
   layers:
   - Default
   - TransparentFX

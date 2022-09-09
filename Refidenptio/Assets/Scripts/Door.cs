@@ -36,6 +36,20 @@ public class Door : MonoBehaviour
             }
         }
 
+        if (other.gameObject.CompareTag("DeathEnemy"))
+        {
+            qtdEnemiesInDoor += 50;
+            /*if (gamaManagerT.defeatedEnemies >= enemiesToUnlock)
+            {
+                OpenDoor();
+                if (!activated)
+                {
+                    room.SetActive(true);
+                    activated = true;
+                }
+            }*/
+        }
+
         if (other.gameObject.CompareTag("Enemy"))
         {
             //qtdEnemiesInDoor++;

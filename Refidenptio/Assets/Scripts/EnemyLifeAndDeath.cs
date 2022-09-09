@@ -8,6 +8,7 @@ public class EnemyLifeAndDeath : MonoBehaviour
     public int enemyScoreValue;
     private float selfTimeDamage = 0;
     private bool onDamage = false;
+    public bool dead = false;
 
     private GameManagerT gameManagerT;
 
@@ -25,6 +26,7 @@ public class EnemyLifeAndDeath : MonoBehaviour
             gameManagerT.Killing(enemyScoreValue);
             gameManagerT.defeatedEnemies++;
             GenerateDeadBody();
+
             Destroy(this.gameObject, 0.01f);
             Debug.Log(gameManagerT.defeatedEnemies);
             //Instanciar corpo morto
@@ -78,5 +80,19 @@ public class EnemyLifeAndDeath : MonoBehaviour
     public void SetOnDamage(bool i)
     {
         onDamage = i;
+    }
+
+    public void CheckDoorCollision()
+    {
+        dead = true;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Door") && dead)
+        {
+            other.gameObject.GetComponent<Door>().qtdEnemiesInDoor--;
+            dead = false;
+        }
     }
 }

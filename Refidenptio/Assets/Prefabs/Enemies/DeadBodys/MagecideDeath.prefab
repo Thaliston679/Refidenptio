@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7627269551768211269}
   m_Layer: 0
   m_Name: MagecideDeath
-  m_TagString: Untagged
+  m_TagString: DeathEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
