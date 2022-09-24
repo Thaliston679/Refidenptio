@@ -12,7 +12,7 @@
 
 •Diminuir tamanho da fonte do Alerta de Fotossensibilidade•
 
-(•)Fazer um gameObject q passe as variaveis do Global Volume e permita nas configurações ativar e desativar os efeitos de tela e mudar a qualidade do jogo.
+•Fazer um gameObject q passe as variaveis do Global Volume e permita nas configurações ativar e desativar os efeitos de tela e mudar a qualidade do jogo.
 
 •Criar métodos diferentes pra cada tipo de ataque do boss.•
 Ex:
@@ -37,11 +37,11 @@ IEnumerator ATK2(){
 }
 
 
-(Em andamento)Botão de pause
+•Botão de pause
 
 •Interromper Script de movimentação da câmera durante pause•
 
-Opção de recomeçar
+•Opção de recomeçar
 
 Fazer com q as flores e os HP restaurem a cada X segundos ao invés de destruir e reduzir a quantidade no mapa
 
@@ -85,15 +85,15 @@ Sacrifica HP para restaurar AMMO (não pode restaurar se hp <= 1)
 
 •(Falta testar)Porta fechando na cara•
 
-(!)Parede sem fricção
+•Parede sem fricção
 
 Criar um mininmapa que vai se abrindo conforme progride no level. E mostra a posição e rotação local
 
-Criar meio q uma área para cada inimigo mas ainda manter os anteriores nelas
+•Criar meio q uma área para cada inimigo mas ainda manter os anteriores nelas
 
 Locais abertos
 
-Enormes áreas fechadas com pilastras para os magecides
+•Enormes áreas fechadas com pilastras para os magecides
 
 Criar lista de efeitos sonoros do jogo
 
@@ -103,13 +103,13 @@ Criar animação de sacrifício
 
 Placa que aparece um toturial (gif) com texto em baixo explicando o principal do jogo
 
-Criar umas portas secretas com os mesmos tiles das paredes q abrem dps de matar x inimigos e fazer a area de abrir de somente 1 bloco. E um corredor de 1 bloco tbm
+•Criar umas portas secretas com os mesmos tiles das paredes q abrem dps de matar x inimigos e fazer a area de abrir de somente 1 bloco. E um corredor de 1 bloco tbm
 
 Criar uma varivel no script de spawn do boss com distY em relação a mão do boss. Para as bala de morcego spawnarem na cabeça dela e demais nas mãos
 
-Mouse não some ao iniciar o jogo
+•Mouse não some ao iniciar o jogo
 
-Área do boss vai ter 5 de altura abrindo aos poucos
+•Área do boss vai ter 5 de altura abrindo aos poucos
 
 Itens nas configurações:
 Aberração cromática
@@ -140,7 +140,9 @@ Adicionar uma variavel int que a cada porta aberta aumenta o x número de inimig
 Quando a var for maior q 0, toca a intro da música de ação, ao acabar a intro, toca o loop enquanto var for maior q 0, e ao chegar em 0, espera o loop da música de ação acabar e toca a transição da música para de música calma.
 
 
-Adicionar uma explosão de partículas quando um inimigo morrer (P&B)
+•Adicionar uma explosão de partículas quando um inimigo morrer (P&B)
 
 Adicionar uma fase 2 mais labiríntica com a cara como boss
+
+Pecado Total: 847 sem matar a DemonAngel
 

@@ -138,6 +138,7 @@ MonoBehaviour:
   enemyScoreValue: 2
   dead: 0
   deadBodyGO: {fileID: 1278045836074556264, guid: 4338302eecf083b4cb7d2a992239e903, type: 3}
+  particleDeath: {fileID: 6018893795754282594, guid: 21658b6d51fd76e41994532bec1c3040, type: 3}
 --- !u!114 &7170566163423918030
 MonoBehaviour:
   m_ObjectHideFlags: 0

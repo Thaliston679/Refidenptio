@@ -9954,6 +9954,7 @@ MonoBehaviour:
   enemyScoreValue: 100
   dead: 0
   deadBodyGO: {fileID: 6884170682821459645, guid: ad119777fbca94546843347ca2e30c55, type: 3}
+  particleDeath: {fileID: 6018893795754282594, guid: 21658b6d51fd76e41994532bec1c3040, type: 3}
 --- !u!65 &4795123894562718618
 BoxCollider:
   m_ObjectHideFlags: 0

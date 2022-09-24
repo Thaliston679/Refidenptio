@@ -13,6 +13,7 @@ public class EnemyLifeAndDeath : MonoBehaviour
     private GameManagerT gameManagerT;
 
     public GameObject deadBodyGO;
+    public GameObject particleDeath;
 
     private void Start()
     {
@@ -25,6 +26,7 @@ public class EnemyLifeAndDeath : MonoBehaviour
         {
             gameManagerT.Killing(enemyScoreValue);
             gameManagerT.defeatedEnemies++;
+            GenerateParticleDeath();
             GenerateDeadBody();
 
             Destroy(this.gameObject, 0.01f);
@@ -60,6 +62,11 @@ public class EnemyLifeAndDeath : MonoBehaviour
     {
         Vector3 deadBodyPos = new(transform.position.x, -0.5f, transform.position.z);
         Instantiate(deadBodyGO, deadBodyPos, Quaternion.identity);
+    }
+
+    public void GenerateParticleDeath()
+    {
+        Instantiate(particleDeath, transform.position, Quaternion.identity);
     }
 
     public void SetEnemyHp(int i)

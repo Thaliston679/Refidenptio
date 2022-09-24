@@ -12,6 +12,7 @@ public class PlayerWeapon : MonoBehaviour
     public Animator animator;
 
     public GameObject bulletEffectPrefab;
+    public GameObject particleDamageEffect;
 
     //private GameManagerT gameManagerT;
 
@@ -140,6 +141,8 @@ public class PlayerWeapon : MonoBehaviour
                         // OU //img.color = Color.red/black;
                         EnemyHpControl.SetSelfTimerDamage(0);
                         EnemyHpControl.SetOnDamage(true);
+
+                        Instantiate(particleDamageEffect, hit.point, Quaternion.identity);
                     }
                     // ------------------------------------------------------------------------------------------------
                     // ------------------------------------------------------------------------------------------------
