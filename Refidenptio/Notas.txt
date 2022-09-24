@@ -135,3 +135,12 @@ Vinheta:
 
 Script para mudar o Global Volume variaveis
 
+
+Adicionar uma variavel int que a cada porta aberta aumenta o x número de inimigos ativos naquela sala e ir decrementando a cada inimigo morto.
+Quando a var for maior q 0, toca a intro da música de ação, ao acabar a intro, toca o loop enquanto var for maior q 0, e ao chegar em 0, espera o loop da música de ação acabar e toca a transição da música para de música calma.
+
+
+Adicionar uma explosão de partículas quando um inimigo morrer (P&B)
+
+Adicionar uma fase 2 mais labiríntica com a cara como boss
+
