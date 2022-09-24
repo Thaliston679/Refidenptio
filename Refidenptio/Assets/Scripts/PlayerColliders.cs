@@ -48,6 +48,19 @@ public class PlayerColliders : MonoBehaviour
         }
     }
 
+    //Testes de correção (Funcionando) Reverti método de colisão dos inimigos de Collision para Trigger
+    private void OnTriggerStay(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            if (!onDamage)
+            {
+                StartCoroutine(DamagePlayer(10));
+            }
+        }
+    }
+    //
+    /*
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -58,6 +71,7 @@ public class PlayerColliders : MonoBehaviour
             }
         }
     }
+    */
 
     public IEnumerator DamagePlayer(float damage)
     {

@@ -9952,6 +9952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: 50
   enemyScoreValue: 100
+  dead: 0
   deadBodyGO: {fileID: 6884170682821459645, guid: ad119777fbca94546843347ca2e30c55, type: 3}
 --- !u!65 &4795123894562718618
 BoxCollider:
@@ -9961,7 +9962,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4795123894562718613}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.9, y: 1.65, z: 0.9}
@@ -10075,5 +10076,3 @@ MonoBehaviour:
   bullet: {fileID: 4288093777695272105, guid: f37cbc4d60b573a469d9ad88e7b6fb22, type: 3}
   bossHP: {fileID: 4795123894562718616}
   bulletMagecide: {fileID: 5414567461153253485}
-  bulletBat: {fileID: 4495956694032484652}
-  bulletBat2: {fileID: 1179688602974583245}

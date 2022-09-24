@@ -143,7 +143,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8271398817187211460}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.97, y: 0.88, z: 0.75}
@@ -162,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: 3
   enemyScoreValue: 5
+  dead: 0
   deadBodyGO: {fileID: 1368455216730853416, guid: cbe552d973fcf1d49973e5fadba35f25, type: 3}
 --- !u!195 &8271398817187211468
 NavMeshAgent:

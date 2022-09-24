@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHP: 4
   enemyScoreValue: 2
+  dead: 0
   deadBodyGO: {fileID: 1278045836074556264, guid: 4338302eecf083b4cb7d2a992239e903, type: 3}
 --- !u!114 &7170566163423918030
 MonoBehaviour:
@@ -180,7 +181,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7170566163423918026}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.44, y: 0.54, z: 0.5}
