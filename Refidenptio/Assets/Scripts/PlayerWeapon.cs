@@ -13,6 +13,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public GameObject bulletEffectPrefab;
     public GameObject particleDamageEffect;
+    public GameObject aimImage;
 
     //private GameManagerT gameManagerT;
 
@@ -43,6 +44,38 @@ public class PlayerWeapon : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && canShoot)
         {
             Hit();
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Aim(true);
+        }
+        if (Input.GetButtonUp("Fire2"))
+        {
+            Aim(false);
+        }
+    }
+
+    void Aim(bool active)
+    {
+        PlayerCamLook pCamL = gameObject.GetComponent<PlayerCamLook>();
+        PlayerCamRotation pCamR = gameObject.GetComponentInParent<PlayerCamRotation>();
+        PlayerMove pMove = gameObject.GetComponentInParent<PlayerMove>();
+
+        if (active)
+        {
+            pCamL.speedV /= 2;
+            pCamR.speedH /= 2;
+            pMove.speedX /= 2;
+            pMove.speedZ /= 2;
+            aimImage.SetActive(true);
+        }
+        else
+        {
+            pCamL.speedV *= 2;
+            pCamR.speedH *= 2;
+            pMove.speedX *= 2;
+            pMove.speedZ *= 2;
+            aimImage.SetActive(false);
         }
     }
 
@@ -122,7 +155,7 @@ public class PlayerWeapon : MonoBehaviour
             qtdAmmo--;
             RaycastHit hit;
 
-            if (Physics.Raycast(aimC.position, aimC.TransformDirection(Vector3.forward), out hit, 20f, 7 /*Mathf.Infinity*/ ))
+            if (Physics.Raycast(aimC.position, aimC.TransformDirection(Vector3.forward), out hit, 40f, 7 /*Mathf.Infinity*/ ))
             {
                 Debug.DrawRay(aimC.position, aimC.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
 

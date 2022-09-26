@@ -36,6 +36,8 @@ public class GameManagerT : MonoBehaviour
     public GameObject configMenu;
     public GameObject gameOverMenu;
 
+    public float healing = 0; //Em 5s restaura 1HP
+
     private void Start()
     {
         EnableMouse();
@@ -61,6 +63,20 @@ public class GameManagerT : MonoBehaviour
         PauseGame();
 
         //Cheat();// !!!!!!!!!- Remover -!!!!!!!!!
+        AutoHeal();
+    }
+
+    public void AutoHeal()
+    {
+        if(playerHP < playerHPMax && healing <= 5)
+        {
+            healing += Time.deltaTime;
+        }
+        if(playerHP < playerHPMax && healing >= 5)
+        {
+            healing = 0;
+            playerHP++;
+        }
     }
 
     /*public void Cheat()
