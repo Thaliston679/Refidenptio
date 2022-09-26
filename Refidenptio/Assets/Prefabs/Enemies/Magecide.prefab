@@ -65,6 +65,7 @@ GameObject:
   - component: {fileID: 2287513880351544152}
   - component: {fileID: 2287513880351544159}
   - component: {fileID: 2287513880351544158}
+  - component: {fileID: 8045623230119308805}
   m_Layer: 0
   m_Name: Magecide
   m_TagString: Enemy
@@ -202,3 +203,19 @@ MonoBehaviour:
   dead: 0
   deadBodyGO: {fileID: 4486851427440346046, guid: 6cb274576db7c474881fddaa676cf41a, type: 3}
   particleDeath: {fileID: 6018893795754282594, guid: 21658b6d51fd76e41994532bec1c3040, type: 3}
+--- !u!54 &8045623230119308805
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287513880351544153}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -14,10 +14,50 @@ public class Door : MonoBehaviour
     public bool enemiesInDoor = false;
     public int qtdEnemiesInDoor = 0;
 
+    public float countDownEnemyInDoor;
+
+    private void Start()
+    {
+        door.SetBool("Close", true);
+    }
+
     private void Update()
     {
         //if (qtdEnemiesInDoor > 0) enemiesInDoor = true;
         //else enemiesInDoor = false;
+        CheckOpenCloseDoor();
+        CheckCountDownEnemyInDoor();
+    }
+
+    public void CheckCountDownEnemyInDoor()
+    {
+        countDownEnemyInDoor -= Time.deltaTime;
+
+        if(countDownEnemyInDoor <= 0)
+        {
+            countDownEnemyInDoor = 0;
+            enemiesInDoor = false;
+        }
+    }
+
+    public void CheckOpenCloseDoor()
+    {
+        if((enemiesInDoor || playerinDoor) && activated)
+        {
+            bool getDoorState = door.GetBool("Close");
+            if (getDoorState)
+            {
+                OpenDoor();
+            }
+        }
+        if(!enemiesInDoor && !playerinDoor && activated)
+        {
+            bool getDoorState = door.GetBool("Open");
+            if (getDoorState)
+            {
+                CloseDoor();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +65,21 @@ public class Door : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             playerinDoor = true;
+            if (gamaManagerT.defeatedEnemies >= enemiesToUnlock)
+            {
+                //OpenDoor();
+                if (!activated)
+                {
+                    room.SetActive(true);
+                    activated = true;
+                }
+            }
+        }
+
+        /*
+        if (other.gameObject.CompareTag("DeathEnemy"))
+        {
+            qtdEnemiesInDoor += 50;
             if (gamaManagerT.defeatedEnemies >= enemiesToUnlock)
             {
                 OpenDoor();
@@ -35,21 +90,8 @@ public class Door : MonoBehaviour
                 }
             }
         }
-
-        if (other.gameObject.CompareTag("DeathEnemy"))
-        {
-            qtdEnemiesInDoor += 50;
-            /*if (gamaManagerT.defeatedEnemies >= enemiesToUnlock)
-            {
-                OpenDoor();
-                if (!activated)
-                {
-                    room.SetActive(true);
-                    activated = true;
-                }
-            }*/
-        }
-
+        */
+        /*
         if (other.gameObject.CompareTag("Enemy"))
         {
             //qtdEnemiesInDoor++;
@@ -63,6 +105,7 @@ public class Door : MonoBehaviour
                 }
             }
         }
+        */
     }
     
 
@@ -74,10 +117,11 @@ public class Door : MonoBehaviour
 
             if (!enemiesInDoor)
             {
-                CloseDoor();
+                //CloseDoor();
             }
         }
 
+        /*
         if (other.gameObject.CompareTag("Enemy"))
         {
             //qtdEnemiesInDoor--;
@@ -87,6 +131,7 @@ public class Door : MonoBehaviour
                 CloseDoor();
             }
         }
+        */
     }
 
     public void OpenDoor()
@@ -116,6 +161,11 @@ public class Door : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             enemiesInDoor = true;
-        }
+            countDownEnemyInDoor = 1;
+        }/*
+        else
+        {
+            enemiesInDoor = false;
+        }*/
     }
 }
