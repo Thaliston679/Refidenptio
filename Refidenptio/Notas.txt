@@ -145,6 +145,7 @@ Quando a var for maior q 0, toca a intro da música de ação, ao acabar a intro
 Adicionar uma fase 2 mais labiríntica com a cara como boss
 
 Pecado Total: 847 sem matar a DemonAngel
+Penitencia total:830  sem matar a DemonAngel
 
 
 Para luta com o Boss
