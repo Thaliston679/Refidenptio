@@ -18,7 +18,7 @@ public class UITextScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        string info = "Pecado: " + score.ToString();
+        string info = "Penitência: " + score.ToString();
         scoreText.text = info;
     }
 }

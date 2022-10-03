@@ -49,6 +49,17 @@ public class GameManagerT : MonoBehaviour
     private float secondsTimer;
     private float minutesTimer;
 
+    public DropDown dropDown;
+
+    public TextMeshProUGUI fps;
+
+    private void Awake()
+    {
+        dropDown.Resolution1920();
+        QualitySettings.SetQualityLevel(0);
+        QualitySettings.renderPipeline = dropDown.qualityLevels[0];
+    }
+
     private void Start()
     {
         EnableMouse();
@@ -83,6 +94,11 @@ public class GameManagerT : MonoBehaviour
         {
             Timer();
         }
+    }
+
+    private void LateUpdate()
+    {
+        fps.text = "FPS: " + ((int)(1 / Time.deltaTime)).ToString();
     }
 
     //Não funcionou porque os inimigos devem estar ativos quando o código for executar (Existe algum meio de executar mesmo com eles desativados?)
@@ -278,6 +294,7 @@ public class GameManagerT : MonoBehaviour
         }
         else
         {
+            playerWeapon.Aim(false);
             pausedGame = false;
             Time.timeScale = 1;
             DisableMouse();

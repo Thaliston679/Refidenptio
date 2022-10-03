@@ -15,6 +15,11 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject particleDamageEffect;
     public GameObject aimImage;
 
+
+    //public bool aiming = false;
+
+    public GameManagerT gameManagerT;
+
     //Accurate
     public float accurateShot;
     public float totalShots;
@@ -28,7 +33,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
-        Shoot();
+        if(!gameManagerT.pausedGame) Shoot();
         //ReloadAmmo();
         AmmoLimit();
         //Cheat();// !!!!!!!!!- Remover -!!!!!!!!!
@@ -59,7 +64,7 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    void Aim(bool active)
+    public void Aim(bool active)
     {
         PlayerCamLook pCamL = gameObject.GetComponent<PlayerCamLook>();
         PlayerCamRotation pCamR = gameObject.GetComponentInParent<PlayerCamRotation>();
@@ -67,18 +72,18 @@ public class PlayerWeapon : MonoBehaviour
 
         if (active)
         {
-            pCamL.speedV /= 2;
-            pCamR.speedH /= 2;
-            pMove.speedX /= 2;
-            pMove.speedZ /= 2;
+            pCamL.speedV = 0.75f;
+            pCamR.speedH = 1;
+            pMove.speedX = 1;
+            pMove.speedZ = 1;
             aimImage.SetActive(true);
         }
         else
         {
-            pCamL.speedV *= 2;
-            pCamR.speedH *= 2;
-            pMove.speedX *= 2;
-            pMove.speedZ *= 2;
+            pCamL.speedV = 1.5f;
+            pCamR.speedH = 2;
+            pMove.speedX = 2;
+            pMove.speedZ = 2;
             aimImage.SetActive(false);
         }
     }

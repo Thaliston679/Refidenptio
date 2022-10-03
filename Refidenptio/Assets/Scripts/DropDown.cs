@@ -8,7 +8,7 @@ public class DropDown : MonoBehaviour
 {
     public RenderPipelineAsset[] qualityLevels;
     public TMP_Dropdown dropDown;
-    
+
     void Start()
     {
         dropDown.value = QualitySettings.GetQualityLevel();
