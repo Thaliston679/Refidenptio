@@ -15,6 +15,10 @@ public class PlayerWeapon : MonoBehaviour
     public GameObject particleDamageEffect;
     public GameObject aimImage;
 
+    //Accurate
+    public float accurateShot;
+    public float totalShots;
+
     //private GameManagerT gameManagerT;
 
     private void Start()
@@ -153,6 +157,7 @@ public class PlayerWeapon : MonoBehaviour
             animator.SetTrigger("Atk");
 
             qtdAmmo--;
+            totalShots++;
             RaycastHit hit;
 
             if (Physics.Raycast(aimC.position, aimC.TransformDirection(Vector3.forward), out hit, 40f, 7 /*Mathf.Infinity*/ ))
@@ -179,7 +184,7 @@ public class PlayerWeapon : MonoBehaviour
                     }
                     // ------------------------------------------------------------------------------------------------
                     // ------------------------------------------------------------------------------------------------
-
+                    accurateShot++;
                     //gameManagerT.Killing(1);
 
                 }

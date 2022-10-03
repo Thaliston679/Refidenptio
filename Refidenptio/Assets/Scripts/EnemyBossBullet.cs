@@ -101,7 +101,7 @@ public class EnemyBossBullet : MonoBehaviour
 
         timeAttackBoss = 1f;
 
-        for (int i = -90; i <= 90; i += 30)
+        for (int i = -60; i <= 60; i += 30)
         {
             randRotateY = i;
             Attack();
@@ -117,7 +117,7 @@ public class EnemyBossBullet : MonoBehaviour
 
         timeAttackBoss = 0.5f;
 
-        for (int i = -45; i < 45; i += 15)
+        for (int i = -30; i < 30; i += 15)
         {
             randRotateY = i;
             Attack();
@@ -133,7 +133,7 @@ public class EnemyBossBullet : MonoBehaviour
 
         timeAttackBoss = 0.5f;
 
-        for (int i = -45; i <= 45; i += 15)
+        for (int i = -30; i <= 30; i += 15)
         {
             randRotateY = i;
             Attack();
@@ -149,7 +149,7 @@ public class EnemyBossBullet : MonoBehaviour
 
         timeAttackBoss = 0.35f;
 
-        for (int i = -90; i <= 90; i += 45)
+        for (int i = -45; i <= 45; i += 45)
         {
             randRotateY = i;
             Attack();
@@ -181,7 +181,7 @@ public class EnemyBossBullet : MonoBehaviour
 
         timeAttackBoss = 1.5f;
 
-        for (int i = -30; i <= 30; i += 10)
+        for (int i = -20; i <= 20; i += 10)
         {
             randRotateY = i;
             Attack();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManagerT : MonoBehaviour
 {
@@ -16,8 +17,12 @@ public class GameManagerT : MonoBehaviour
 
     public UITextScore uITextScore;
     private int score;
+    [SerializeField]
+    private int totalScore = 947;
     public float qtdAmmo;
     public float maxAmmo;
+
+    private float accurate;
 
     public float playerHP = 100;
     public float playerHPMax = 100;
@@ -26,6 +31,8 @@ public class GameManagerT : MonoBehaviour
     public GameObject ammoFill;
 
     public int defeatedEnemies;
+    [SerializeField]
+    private int totalEnemies = 185;
 
     public bool inGame = false;
     public bool pausedGame = false;
@@ -35,12 +42,17 @@ public class GameManagerT : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject configMenu;
     public GameObject gameOverMenu;
+    public GameObject statistics;
 
     public float healing = 0; //Em 5s restaura 1HP
+
+    private float secondsTimer;
+    private float minutesTimer;
 
     private void Start()
     {
         EnableMouse();
+        //AccountantTotalScore();
     }
 
     // Update is called once per frame
@@ -64,6 +76,33 @@ public class GameManagerT : MonoBehaviour
 
         //Cheat();// !!!!!!!!!- Remover -!!!!!!!!!
         AutoHeal();
+
+        //Estatísticas
+        CheckStatistics();
+        if (inGame)
+        {
+            Timer();
+        }
+    }
+
+    //Não funcionou porque os inimigos devem estar ativos quando o código for executar (Existe algum meio de executar mesmo com eles desativados?)
+    void AccountantTotalScore()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+           totalScore += enemy.GetComponent<EnemyLifeAndDeath>().enemyScoreValue;
+        }
+    }
+
+    void Timer()
+    {
+        secondsTimer += Time.deltaTime;
+        if(secondsTimer >= 60)
+        {
+            secondsTimer = 0;
+            minutesTimer++;
+        }
     }
 
     public void AutoHeal()
@@ -89,7 +128,7 @@ public class GameManagerT : MonoBehaviour
 
     public void Killing(int enemyScore)
     {
-        score = score + enemyScore;
+        score += enemyScore;
     }
 
     public void GetHP(int a)
@@ -149,6 +188,14 @@ public class GameManagerT : MonoBehaviour
         gameOverMenu.SetActive(false);
         playerColliders.DamagePlayer(0);
         inGame = true;
+
+        GameObject findBossGO = GameObject.FindGameObjectWithTag("Enemy");
+        EnemyLifeAndDeath findBoss = findBossGO.GetComponent<EnemyLifeAndDeath>();
+        if(findBoss.enemyScoreValue == 100)
+        {
+            findBoss.enemyHP = 50;
+            findBossGO.GetComponent<BossControl>().GetAgent().speed = 2;
+        }
     }
 
     public void GameRestart()
@@ -268,5 +315,19 @@ public class GameManagerT : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void CheckStatistics()
+    {
+        //Time
+        //DefeatedEnemies
+        //Accurate
+        accurate = (int)(100 / (playerWeapon.totalShots / playerWeapon.accurateShot));
+
+        //Penitence
+        //score;
+
+        //"++"
+        statistics.GetComponent<TextMeshProUGUI>().text = "Inimigos derrotados: "+defeatedEnemies+" / "+totalEnemies+"\nPenitência: "+score+" / "+totalScore+ " \nPrecisão: "+accurate+ "%\n Tempo de conclusão: "+ (int)minutesTimer + ":" + (int)secondsTimer;
     }
 }

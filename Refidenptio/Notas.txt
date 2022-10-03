@@ -6,7 +6,7 @@
 
 •Fazer o Player perder HP com inimigos melee e inimigos ranged•
 
-(Muito complicado por enquanto) Consertar pulo que para de funcionar, tirando o box collider de cada bloco na parede e substituindo por um só para cada parede
+•Consertar pulo que para de funcionar, tirando o box collider de cada bloco na parede e substituindo por um só para cada parede
 
 (Não terá) Criar animações de ataque inimigos-----
 
@@ -174,4 +174,17 @@ Agora...
 Apenas continue...
 Numa agonia eterna...
 Pois é tudo o que te resta...
+
+
+
+O que exibir na tela de vitória:
+Tela de estatísticas
+Porcentagem de acerto // Precisão
+Inimigos derrotados // Inimigos derrotados
+Pecado // Pecado
+Tempo de conclusão // Tempo de conclusão
+
+(100 / ( tiros totais / tiros precisos))
+
+
 
