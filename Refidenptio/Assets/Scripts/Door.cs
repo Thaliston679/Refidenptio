@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Door : MonoBehaviour
 {
@@ -13,8 +14,11 @@ public class Door : MonoBehaviour
     public bool playerinDoor = false;
     public bool enemiesInDoor = false;
     public int qtdEnemiesInDoor = 0;
-
     public float countDownEnemyInDoor;
+
+    public bool textVisible = false;
+    public GameObject canvas;
+    public TextMeshProUGUI[] txt;
 
     private void Start()
     {
@@ -27,6 +31,14 @@ public class Door : MonoBehaviour
         //else enemiesInDoor = false;
         CheckOpenCloseDoor();
         CheckCountDownEnemyInDoor();
+
+        if(textVisible)
+        {
+            foreach (TextMeshProUGUI textC in txt)
+            {
+                textC.text = gamaManagerT.defeatedEnemies.ToString() + " / " + enemiesToUnlock.ToString();
+            }
+        }
     }
 
     public void CheckCountDownEnemyInDoor()
@@ -72,7 +84,14 @@ public class Door : MonoBehaviour
                 {
                     room.SetActive(true);
                     activated = true;
+                    textVisible = false;
+                    canvas.SetActive(false);
                 }
+            }
+            else
+            {
+                textVisible = true;
+                canvas.SetActive(true);
             }
         }
 
@@ -113,6 +132,8 @@ public class Door : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            textVisible = false;
+            canvas.SetActive(false);
             playerinDoor = false;
 
             if (!enemiesInDoor)
