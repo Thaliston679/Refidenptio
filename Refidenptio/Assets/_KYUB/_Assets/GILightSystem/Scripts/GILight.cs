@@ -434,7 +434,7 @@ namespace Kyub.GI
             TryRecreateCustomMaterial();
 #if UNITY_EDITOR
             SetIconDirty();
-            UnityEditor.GameObjectUtility.SetStaticEditorFlags(m_giMeshRenderer.gameObject, UnityEditor.StaticEditorFlags.LightmapStatic | UnityEditor.StaticEditorFlags.BatchingStatic);
+            UnityEditor.GameObjectUtility.SetStaticEditorFlags(m_giMeshRenderer.gameObject, UnityEditor.StaticEditorFlags.ContributeGI | UnityEditor.StaticEditorFlags.BatchingStatic);
 
             UnityEditor.SerializedObject v_rendererSerialized = new UnityEditor.SerializedObject(m_giMeshRenderer);
             var v_scaleInLightMapProp = v_rendererSerialized.FindProperty("m_ScaleInLightmap");
@@ -539,7 +539,7 @@ namespace Kyub.GI
                 SetDirty();
             }
 #if UNITY_EDITOR
-            UnityEditor.GameObjectUtility.SetStaticEditorFlags(m_giMeshRenderer.gameObject, UnityEditor.StaticEditorFlags.LightmapStatic | UnityEditor.StaticEditorFlags.BatchingStatic);
+            UnityEditor.GameObjectUtility.SetStaticEditorFlags(m_giMeshRenderer.gameObject, UnityEditor.StaticEditorFlags.ContributeGI | UnityEditor.StaticEditorFlags.BatchingStatic);
 #endif
             TryRecreateCustomMaterial();
         }
