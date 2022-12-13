@@ -20,28 +20,34 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
+		[Header("Refidenptio")]
+		public bool rTap;
+		public bool lTap;
+		public bool rHold;
+		public bool lHold;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
-		public void OnMove(InputValue value)
+		public void OnMove(InputAction.CallbackContext value)
 		{
-			MoveInput(value.Get<Vector2>());
+			MoveInput(value.ReadValue<Vector2>());
 		}
 
-		public void OnLook(InputValue value)
+		public void OnLook(InputAction.CallbackContext value)
 		{
 			if(cursorInputForLook)
 			{
-				LookInput(value.Get<Vector2>());
+				LookInput(value.ReadValue<Vector2>());
 			}
 		}
 
-		public void OnJump(InputValue value)
+		public void OnJump(InputAction.CallbackContext value)
 		{
-			JumpInput(value.isPressed);
+			JumpInput(value.performed);
 		}
 
-		public void OnSprint(InputValue value)
+		public void OnSprint(InputAction.CallbackContext value)
 		{
-			SprintInput(value.isPressed);
+			SprintInput(value.performed);
 		}
 #endif
 
@@ -74,6 +80,26 @@ namespace StarterAssets
 		private void SetCursorState(bool newState)
 		{
 			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+		}
+
+		public void OnRightTap(InputAction.CallbackContext value)
+        {
+			rTap = value.performed;
+        }
+
+		public void OnLeftTap(InputAction.CallbackContext value)
+		{
+			lTap = value.performed;
+		}
+
+		public void OnRightHold(InputAction.CallbackContext value)
+		{
+			if (!lHold) rHold = value.performed;
+		}
+
+		public void OnLeftHold(InputAction.CallbackContext value)
+		{
+			if (!rHold) lHold = value.performed;
 		}
 	}
 	

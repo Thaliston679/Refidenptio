@@ -97,6 +97,19 @@ namespace StarterAssets
 
 		private void Start()
 		{
+			//Define o tempo até poder ativar o tiro
+			//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+			float tempoDePressao = 0.2f;
+			//
+			InputSystem.settings.defaultHoldTime = tempoDePressao;
+			//InputSystem.settings.defaultHoldTime = 0.1f;
+			//
+			//InputSystem.settings.defaultTapTime = tempoDePressao/2;
+			//InputSystem.settings.defaultTapTime = 0.2f;
+			InputSystem.settings.defaultTapTime = 0.4f;
+			//
+			//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -115,6 +128,10 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			RightTap();
+			LeftTap();
+			RightHold();
+			LeftHold();
 		}
 
 		private void LateUpdate()
@@ -263,6 +280,30 @@ namespace StarterAssets
 
 			// when selected, draw a gizmo in the position of, and matching radius of, the grounded collider
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
+		}
+
+		private void LeftTap()
+        {
+			if (_input.rTap && !_input.lHold) Debug.Log("Clique esquerdo");
+			if (_input.rTap && _input.lHold) Debug.Log("Tiro esquerdo");
+			_input.rTap = false;
+        }
+
+		private void RightTap()
+        {
+			if (_input.lTap && !_input.rHold) Debug.Log("Clique direito");
+			if (_input.lTap && _input.rHold) Debug.Log("Tiro direito");
+			_input.lTap = false;
+		}
+
+		private void RightHold()
+        {
+			if (!_input.lHold && _input.rHold) Debug.Log("Pressão Direita");
+        }
+
+		private void LeftHold()
+        {
+			if (!_input.rHold && _input.lHold) Debug.Log("Pressão Esquerda");
 		}
 	}
 }
