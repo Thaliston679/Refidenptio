@@ -71,6 +71,7 @@ namespace StarterAssets
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
+		private WeaponAnimationControl _wAnimControl;
 
 		private const float _threshold = 0.01f;
 
@@ -99,7 +100,7 @@ namespace StarterAssets
 		{
 			//Define o tempo até poder ativar o tiro
 			//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
-			float tempoDePressao = 0.2f;
+			float tempoDePressao = 0.1f;
 			//
 			InputSystem.settings.defaultHoldTime = tempoDePressao;
 			//InputSystem.settings.defaultHoldTime = 0.1f;
@@ -112,6 +113,7 @@ namespace StarterAssets
 
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
+			_wAnimControl = GetComponent<WeaponAnimationControl>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 			_playerInput = GetComponent<PlayerInput>();
 #else
@@ -132,6 +134,7 @@ namespace StarterAssets
 			LeftTap();
 			RightHold();
 			LeftHold();
+			CenterHold();
 		}
 
 		private void LateUpdate()
@@ -285,25 +288,53 @@ namespace StarterAssets
 		private void LeftTap()
         {
 			if (_input.rTap && !_input.lHold) Debug.Log("Clique esquerdo");
-			if (_input.rTap && _input.lHold) Debug.Log("Tiro esquerdo");
+			if (_input.rTap && _input.lHold)
+			{
+				Debug.Log("Tiro esquerdo");
+				if (!_wAnimControl.atking) _wAnimControl.animWP.SetBool("Atk", true);
+			}
 			_input.rTap = false;
         }
 
 		private void RightTap()
         {
 			if (_input.lTap && !_input.rHold) Debug.Log("Clique direito");
-			if (_input.lTap && _input.rHold) Debug.Log("Tiro direito");
+			if (_input.lTap && _input.rHold)
+			{
+				Debug.Log("Tiro direito");
+				if(!_wAnimControl.atking) _wAnimControl.animWP.SetBool("Atk", true);
+			}
 			_input.lTap = false;
 		}
 
 		private void RightHold()
         {
-			if (!_input.lHold && _input.rHold) Debug.Log("Pressão Direita");
+			if (!_input.lHold && _input.rHold)
+			{
+				Debug.Log("Pressão Direita");
+				_wAnimControl.animWP.SetBool("Right", true);
+			}
+			
         }
 
 		private void LeftHold()
         {
-			if (!_input.rHold && _input.lHold) Debug.Log("Pressão Esquerda");
+			if (!_input.rHold && _input.lHold)
+			{
+				Debug.Log("Pressão Esquerda");
+				_wAnimControl.animWP.SetBool("Left", true);
+			}
+			
+		}
+
+		private void CenterHold()
+        {
+			if (!_input.lHold && !_input.rHold)
+			{
+				Debug.Log("Pressão Nenhuma");
+				_wAnimControl.animWP.SetBool("Right", false);
+				_wAnimControl.animWP.SetBool("Left", false);
+			}
 		}
 	}
 }
