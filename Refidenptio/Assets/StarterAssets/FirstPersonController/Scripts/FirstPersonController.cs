@@ -72,6 +72,7 @@ namespace StarterAssets
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
 		private WeaponAnimationControl _wAnimControl;
+		public WeaponControl weaponControl;
 
 		private const float _threshold = 0.01f;
 
@@ -135,6 +136,8 @@ namespace StarterAssets
 			RightHold();
 			LeftHold();
 			CenterHold();
+
+			weaponControl.shooting = _wAnimControl.atking;
 		}
 
 		private void LateUpdate()
@@ -294,7 +297,7 @@ namespace StarterAssets
 				if (!_wAnimControl.atking) _wAnimControl.animWP.SetBool("Atk", true);
 			}
 			_input.rTap = false;
-        }
+		}
 
 		private void RightTap()
         {
