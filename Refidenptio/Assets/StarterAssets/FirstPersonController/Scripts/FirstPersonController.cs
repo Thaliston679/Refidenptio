@@ -136,8 +136,6 @@ namespace StarterAssets
 			RightHold();
 			LeftHold();
 			CenterHold();
-
-			weaponControl.shooting = _wAnimControl.atking;
 		}
 
 		private void LateUpdate()

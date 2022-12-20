@@ -14,12 +14,11 @@ public class WeaponControl : MonoBehaviour
     //Status da arma
     public float timeBetweenShooting/*Tempo entre tiros*/, spread/*Espalhar*/, reloadTime/*Tempo de recarga*/, timeBetweenShots/*Tempo entre tiros*/;
     public int magazineSize/*Tamanho do pente*/, bulletsPerTap/*Balas por tiro*/;
-    public bool allowButtonHold/*Para armas que podem segurar o gatilhpo*/;
 
     int bulletsLeft/*Balas restantes*/, bulletsShot/*Balas disparadas*/;
 
     //bools
-    public bool shooting/*Atirando*/, readyToShoot/*Pronto pra atirar*/;
+    public bool readyToShoot/*Pronto pra atirar*/;
 
     //Reference
     public Camera fpsCam;
@@ -41,38 +40,14 @@ public class WeaponControl : MonoBehaviour
 
     private void Update()
     {
-        MyInput();
-
         //Mostra municao na tela
         if (ammunitionDisplay != null)
             ammunitionDisplay.SetText(bulletsLeft / bulletsPerTap + " / " + magazineSize / bulletsPerTap);
     }
-    private void MyInput()
-    {
-        //Remover MyInput
-        //O script vai ser chamado por meio de outra variavel que vai ser executada dentro do call
-        //Aqui vai ter a variavel de shooting normal e outra pra verificar se pode ficar atirando direto
-        //!!!!!Se poder ficar atirando direto habilita o bool no Update echama direto
-        //
-        //Ao invés disso, fazer sempre chamar o tiro pela animação e oq atira direto, o loop da animação chamaria o tiro repetidas vezes
-        //
-        //Verifique se é permitido manter pressionado o botão e obter a entrada correspondente
-        /*if (allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
-        else shooting = Input.GetKeyDown(KeyCode.Mouse0);*/
-
-        //Shooting
-        if (readyToShoot && shooting && bulletsLeft > 0)
-        {
-            //Set bullets shot to 0
-            bulletsShot = 0;
-
-            Shoot();
-        }
-    }
 
     public void CallShoot()
     {
-        if (readyToShoot && shooting && bulletsLeft > 0)
+        if (readyToShoot && bulletsLeft > 0)
         {
             //Set bullets shot to 0
             bulletsShot = 0;
