@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
+    private Transform player;
+    [SerializeField] private Transform child;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     void Update()
     {
-        if(PlayerMove.Player != null)
+        if(player != null)
         {
-            transform.LookAt(new Vector3(PlayerMove.Player.transform.position.x, transform.position.y, PlayerMove.Player.transform.position.z));
+            //child.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
+            transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z), Vector3.up);
         }
     }
 }

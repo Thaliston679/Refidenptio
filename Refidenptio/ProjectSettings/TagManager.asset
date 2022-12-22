@@ -12,6 +12,7 @@ TagManager:
   - Door
   - DeathEnemy
   - CinemachineTarget
+  - BillBoard
   layers:
   - Default
   - TransparentFX
