@@ -5,7 +5,6 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
     private Transform player;
-    [SerializeField] private Transform child;
 
     private void Start()
     {
@@ -16,8 +15,13 @@ public class Billboard : MonoBehaviour
     {
         if(player != null)
         {
+            //Vector3 v3T = transform.position + player.transform.position * Vector3.forward;
+            //v3T.y = transform.position.y;
+            //transform.LookAt(v3T, Vector3.up);
+
+            Vector3 LookDir = player.position;
             //child.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
-            transform.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z), Vector3.up);
+            transform.LookAt(new Vector3(LookDir.x, transform.position.y, LookDir.z));
         }
     }
 }
