@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4664061209927002086}
   - component: {fileID: 6590911669497218594}
   m_Layer: 0
-  m_Name: StaffWhiteExp
+  m_Name: StaffBlackExp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1550,7 +1550,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: -1169075034, guid: 437584aa1c07fde438583576cc407eff, type: 3}
+    - sprite: {fileID: -594541849, guid: 437584aa1c07fde438583576cc407eff, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:

@@ -5,10 +5,11 @@ using UnityEngine;
 public class Billboard : MonoBehaviour
 {
     private Transform player;
+    public bool rotY;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("CinemachineTarget").transform;
     }
 
     void Update()
@@ -21,7 +22,12 @@ public class Billboard : MonoBehaviour
 
             Vector3 LookDir = player.position;
             //child.LookAt(new Vector3(player.position.x, transform.position.y, player.position.z));
-            transform.LookAt(new Vector3(LookDir.x, transform.position.y, LookDir.z));
+
+            float posY;
+            if (rotY) posY = player.transform.position.y;
+            else posY = transform.position.y;
+
+            transform.LookAt(new Vector3(LookDir.x, posY, LookDir.z));
         }
     }
 }

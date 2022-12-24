@@ -291,6 +291,8 @@ namespace StarterAssets
 			if (_input.rTap && !_input.lHold) Debug.Log("Clique esquerdo");
 			if (_input.rTap && _input.lHold)
 			{
+				//Seleciona o prefab de tiro preto
+				weaponControl.bullet = weaponControl.selectBullet[0];
 				Debug.Log("Tiro esquerdo");
 				if (!_wAnimControl.atking) _wAnimControl.animWP.SetBool("Atk", true);
 			}
@@ -302,8 +304,10 @@ namespace StarterAssets
 			if (_input.lTap && !_input.rHold) Debug.Log("Clique direito");
 			if (_input.lTap && _input.rHold)
 			{
+				//Seleciona o prefab de tiro branco
 				Debug.Log("Tiro direito");
-				if(!_wAnimControl.atking) _wAnimControl.animWP.SetBool("Atk", true);
+				weaponControl.bullet = weaponControl.selectBullet[1];
+				if (!_wAnimControl.atking) _wAnimControl.animWP.SetBool("Atk", true);
 			}
 			_input.lTap = false;
 		}

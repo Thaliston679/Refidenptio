@@ -7,6 +7,7 @@ public class WeaponControl : MonoBehaviour
 {
     //bullet 
     public GameObject bullet;
+    public GameObject[] selectBullet;
 
     //bullet force
     public float shootForce, upwardForce;

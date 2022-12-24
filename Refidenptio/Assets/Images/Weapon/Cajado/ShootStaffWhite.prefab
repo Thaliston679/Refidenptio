@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5526520281162037752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.075, y: 0.075, z: 0.075}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2349956922956884230}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 643518931, guid: 213c9ba22ebe6c54fa65a7d5d52ff751, type: 3}
+  m_Sprite: {fileID: 1676216787, guid: 437584aa1c07fde438583576cc407eff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4543550431328695323}
   - component: {fileID: 5726401080864712929}
   m_Layer: 12
-  m_Name: ShootStaff
+  m_Name: ShootStaffWhite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6735198139500399046}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.12, y: -0.6612001, z: 0.19}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -316,7 +316,7 @@ PrefabInstance:
     - target: {fileID: 2702327661662355331, guid: 967cf98a2dcfbd646b24afb5c4d4e423, type: 3}
       propertyPath: UVModule.sprites.Array.data[0].sprite
       value: 
-      objectReference: {fileID: -1154022815, guid: 14b31048138549e46878667e83d459d1, type: 3}
+      objectReference: {fileID: 754448854, guid: 437584aa1c07fde438583576cc407eff, type: 3}
     - target: {fileID: 2702327661662355331, guid: 967cf98a2dcfbd646b24afb5c4d4e423, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime1
       value: 16384
