@@ -354,11 +354,11 @@ namespace StarterAssets
 
 			if (dutchCam > 0 && _input.hCamDuthc == 0)
             {
-				dutchCam -= Time.deltaTime * 15;
+				dutchCam -= Time.deltaTime * 30;
             }
 			if(dutchCam < 0 && _input.hCamDuthc == 0)
             {
-				dutchCam += Time.deltaTime * 15;
+				dutchCam += Time.deltaTime * 30;
 			}
 
 			cCam.m_Lens.Dutch = dutchCam;

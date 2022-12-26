@@ -1,0 +1,5 @@
+newmtl TileWhite_41
+map_Kd TileWhite_41.png
+Kd 1 1 1
+d 1
+
