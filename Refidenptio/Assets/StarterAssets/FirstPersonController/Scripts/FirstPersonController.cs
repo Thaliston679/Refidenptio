@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Cinemachine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
 #endif
@@ -76,6 +77,9 @@ namespace StarterAssets
 
 		private const float _threshold = 0.01f;
 
+		public CinemachineVirtualCamera cCam;
+		private float dutchCam = 0;
+
 		private bool IsCurrentDeviceMouse
 		{
 			get
@@ -136,6 +140,7 @@ namespace StarterAssets
 			RightHold();
 			LeftHold();
 			CenterHold();
+			CamDutch();
 		}
 
 		private void LateUpdate()
@@ -340,6 +345,23 @@ namespace StarterAssets
 				_wAnimControl.animWP.SetBool("Right", false);
 				_wAnimControl.animWP.SetBool("Left", false);
 			}
+		}
+
+		private void CamDutch()
+        {
+			if (_input.hCamDuthc > 0 && dutchCam > -9) dutchCam -= Time.deltaTime * 15;
+			if (_input.hCamDuthc < 0 && dutchCam < 9) dutchCam += Time.deltaTime * 15;
+
+			if (dutchCam > 0 && _input.hCamDuthc == 0)
+            {
+				dutchCam -= Time.deltaTime * 15;
+            }
+			if(dutchCam < 0 && _input.hCamDuthc == 0)
+            {
+				dutchCam += Time.deltaTime * 15;
+			}
+
+			cCam.m_Lens.Dutch = dutchCam;
 		}
 	}
 }

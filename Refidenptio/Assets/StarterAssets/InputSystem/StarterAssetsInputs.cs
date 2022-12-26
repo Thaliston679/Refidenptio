@@ -26,6 +26,8 @@ namespace StarterAssets
 		public bool rHold;
 		public bool lHold;
 
+		public float hCamDuthc;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		public void OnMove(InputAction.CallbackContext value)
 		{
@@ -55,6 +57,7 @@ namespace StarterAssets
 		public void MoveInput(Vector2 newMoveDirection)
 		{
 			move = newMoveDirection;
+			hCamDuthc = newMoveDirection.x;
 		} 
 
 		public void LookInput(Vector2 newLookDirection)
