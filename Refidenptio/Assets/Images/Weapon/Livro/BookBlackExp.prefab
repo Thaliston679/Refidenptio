@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4664061209927002086}
   - component: {fileID: 6590911669497218594}
   m_Layer: 0
-  m_Name: BookWhiteExp
+  m_Name: BookBlackExp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1550,7 +1550,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 1459595604, guid: 6617fb7395c814945884068f2a01c5f5, type: 3}
+    - sprite: {fileID: -560376719, guid: 6617fb7395c814945884068f2a01c5f5, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
